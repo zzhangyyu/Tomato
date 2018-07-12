@@ -1,0 +1,8 @@
+<view class="index">
+  <view class="common-list-text">{{consilia.name}}</view>
+  <view class="common-list-text">{{consilia.sex}}</view>
+  <view class="common-list-text">{{consilia.age}}</view>
+  <view class="common-list-text">{{consilia.birthday}}</view>
+  <view class="common-list-text">{{consilia.zodiac}}</view>
+  <view class="common-list-text">{{consilia.visitingDate}}</view>  
+</view>

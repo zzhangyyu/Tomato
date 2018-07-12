@@ -5,7 +5,7 @@
   <view class="index-bd">
     <view class="kind-list">
       <block wx:for-items="{{patientIntroList}}" wx:key="{{item.patientInfoId}}">
-        <navigator url="">
+        <navigator url="/pages/consilia/consilia?patientConditionId={{item.patientConditionId}}">
           <view class="common-list-item">
             <view id="{{item.patientInfoId}}" class="common-list-item-hd">
               <view class="common-list-text">姓名：</view>

@@ -2,7 +2,10 @@
   "pages":[
     "pages/tabBar/dateDir",
     "pages/tabBar/nameDir",
-    "pages/dateIntro/dateIntro"
+    "pages/dateIntro/dateIntro",
+    "pages/consilia/consilia",
+    "pages/nameIntro/nameIntro"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
