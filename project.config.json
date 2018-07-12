@@ -4,14 +4,14 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.7",
+	"libVersion": "2.1.1",
 	"appid": "wx5fab2978a483ec56",
 	"projectname": "potato",
 	"isGameTourist": false,

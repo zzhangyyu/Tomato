@@ -76,36 +76,35 @@
 }
 
 
-.kind-list-item {
+.common-list-item {
   margin: 20rpx 0;
   background-color: #FFFFFF;
-  border-radius: 4rpx;
+  border-radius: 10rpx;
   overflow: hidden;
 }
-.kind-list-item:first-child {
+.common-list-item:first-child {
   margin-top: 0;
 }
-.kind-list-text{
+.common-list-text{
   flex: 1;
 }
-.kind-list-img {
+.common-list-img {
   width: 60rpx;
   height: 60rpx;
 }
-.kind-list-item-hd {
+.common-list-item-hd {
   padding: 30rpx;
   display: flex;
   align-items: center;
-
   transition: opacity .3s;
 }
-.kind-list-item-hd-show {
+.common-list-item-hd-show {
   opacity: .2;
 }
-.kind-list-item-bd {
+.common-list-item-bd {
   height: 0;
   overflow: hidden;
 }
-.kind-list-item-bd-show {
+.common-list-item-bd-show {
   height: auto;
 }

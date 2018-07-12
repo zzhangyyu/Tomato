@@ -1,0 +1,5 @@
+<view class="index">
+  <view class="index-hd">
+    <view class="index-desc">这是按病人姓名分类的的目录。</view>
+  </view>
+</view>

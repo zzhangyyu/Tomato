@@ -1,7 +1,0 @@
-<view class="index">
-  <view class="index-hd">
-    <image class="index-logo" src="/image/icon_component.png"></image>
-    <view class="index-desc">这是按病人姓名分类的的目录</view>
-  </view>
-  
-</view>

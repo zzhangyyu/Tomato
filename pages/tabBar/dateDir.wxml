@@ -1,0 +1,24 @@
+<view class="index">
+  <view class="filter-hd">
+    <image class="filter-image" src="/image/ic_normal_date.png"></image>
+    <view class="filter-text">筛选</view>
+  </view>
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{patientdateList}}" wx:key="{{item.visitingDate}}">
+        <navigator url="/pages/dateIntro/dateIntro?visitingDate={{item.visitingDate}}">
+          <view class="common-list-item">
+            <view id="{{item.visitingDate}}" class="common-list-item-hd">
+              <view class="common-list-text">就诊日期：</view>
+              <view class="common-list-text">{{item.visitingDate}}</view>
+            </view>
+            <view id="{{item.visitingDate}}" class="common-list-item-hd">
+              <view class="common-list-text">就诊人数：</view>
+              <view class="common-list-text">{{item.patientCnt}}</view>
+            </view>    
+          </view>
+          </navigator>
+      </block>
+    </view>
+  </view>
+</view>

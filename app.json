@@ -1,13 +1,14 @@
 {
   "pages":[
-    "pages/tabBar/component/dateDir",
-    "pages/tabBar/component/nameDir"
+    "pages/tabBar/dateDir",
+    "pages/tabBar/nameDir",
+    "pages/dateIntro/dateIntro"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#2c2c2c",
     "navigationBarTitleText": "中一学堂",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   },
   "tabBar": {
     "color": "#7A7E83",
@@ -16,13 +17,13 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/tabBar/component/dateDir",
+        "pagePath": "pages/tabBar/dateDir",
         "iconPath": "image/icon_tab_date_dir.png",
         "selectedIconPath": "image/icon_tab_date_dir_HL.png",
         "text": "按日期"
       },
       {
-        "pagePath": "pages/tabBar/component/nameDir",
+        "pagePath": "pages/tabBar/nameDir",
         "iconPath": "image/icon_tab_name_dir.png",
         "selectedIconPath": "image/icon_tab_name_dir_HL.png",
         "text": "按病人"

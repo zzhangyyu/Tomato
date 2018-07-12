@@ -1,0 +1,19 @@
+@import "/pages/common/index.wxss";
+
+.filter-hd {
+  padding: 10rpx;
+  text-align: right;
+  display: flex;    
+  align-items: center; 
+  margin: 0 auto; 
+}
+
+.filter-image {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.filter-text {
+  color: #888888;
+  font-size: 35rpx;
+}
