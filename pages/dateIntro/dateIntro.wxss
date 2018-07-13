@@ -1,4 +1,1 @@
 @import "/pages/common/index.wxss";
-.page-indicator{
-  text-align: center
-}

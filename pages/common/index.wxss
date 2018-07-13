@@ -108,3 +108,7 @@
 .common-list-item-bd-show {
   height: auto;
 }
+
+.page-indicator{
+  text-align: center
+}
