@@ -1,3 +1,4 @@
+var networkUtil = require("../../utils/network.js");
 Page({
   data: {
   },
@@ -6,20 +7,38 @@ Page({
     var queryStartDate = "2017-06-01";
     var queryEndDate = "2018-08-01";
     var recordPerPage = "20";
-    var req = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage, "queryStartDate": queryStartDate, "queryEndDate": queryEndDate }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
-    wx.request({
-      url: 'http://118.24.19.145/grape/patient/getConsiliaDateDir',
-      header:{
-        contentType: 'application/json;charset=utf-8',
-      },
-      dataType: 'json',
-      method:"POST",
-      data: req,
-      success:function(res){
-        console.log(res.data);
-        that.setData({patientdateList:res.data.content});
-      }
-    })
+    var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage, "queryStartDate": queryStartDate, "queryEndDate": queryEndDate }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
+  },
+  onPullDownRefresh:function(){
+    console.log("下拉刷新了");
+    var that = this;
+    var queryStartDate = "2017-06-01";
+    var queryEndDate = "2018-08-01";
+    var recordPerPage = "20";
+    var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage, "queryStartDate": queryStartDate, "queryEndDate": queryEndDate }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
+  },
+  onReachBottom:function () {
+    console.log("上拉加载了");
+  },
+  //  点击日期组件确定事件  
+  bindDateChange: function (e) {
+    console.log(e.detail.value);
+    var that = this;
+    var queryStartDate = e.detail.value;
+    var queryEndDate = e.detail.value;
+    var recordPerPage = "20";
+    var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage, "queryStartDate": queryStartDate, "queryEndDate": queryEndDate }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
+  },
+  onGetConsiliaDateDirSuccess: function (data, requestCode) {
+    var that = this;
+    that.setData({ patientdateList: data.content });
+  },
+  onGetConsiliaDateDirFail: function (data, requestCode) {
+    var that = this;
+    that.setData({ patientdateList: data.content });
   }
 })
 

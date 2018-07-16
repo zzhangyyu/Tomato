@@ -1,3 +1,4 @@
+var networkUtil = require("../../utils/network.js");
 Page({
   data: {
   },
@@ -7,20 +8,16 @@ Page({
     var queryStartDate = option.visitingDate;
     var queryEndDate = option.visitingDate;
     var recordPerPage = "20";
-    var req = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage, "queryStartDate": queryStartDate, "queryEndDate": queryEndDate }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
-    wx.request({
-      url: 'http://118.24.19.145/grape/patient/getConsiliaDateIntro',
-      header: {
-        contentType: 'application/json;charset=utf-8',
-      },
-      dataType: 'json',
-      method: "POST",
-      data: req,
-      success: function (res) {
-        console.log(res.data);
-        that.setData({ patientIntroList: res.data.content[0].patientInfos});
-      }
-    })
+    var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage, "queryStartDate": queryStartDate, "queryEndDate": queryEndDate }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaDateIntro", reqJson, "正在加载...", that.onGetConsiliaDateIntroSuccess, that.onGetConsiliaDateIntroFail);
+  },
+  onGetConsiliaDateIntroSuccess: function (data, requestCode) {
+    var that = this;
+    that.setData({ patientIntroList: data.content[0].patientInfos});
+  },
+  onGetConsiliaDateIntroFail: function (data, requestCode) {
+    var that = this;
+    that.setData({ patientIntroList: data.content[0].patientInfos});
   }
 })
 

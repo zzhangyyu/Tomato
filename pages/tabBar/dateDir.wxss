@@ -1,16 +1,16 @@
 @import "/pages/common/index.wxss";
 
 .filter-hd {
-  padding: 10rpx;
-  text-align: right;
+  padding: 20rpx;
   display: flex;    
-  align-items: center; 
-  margin: 0 auto; 
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .filter-image {
   width: 35rpx;
   height: 35rpx;
+  margin: 0 10rpx 0 0;
 }
 
 .filter-text {
