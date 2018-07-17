@@ -1,54 +1,38 @@
+var networkUtil = require("../../utils/network.js");
 Page({
   data: {
-    list: [
-      {
-        id: 'view',
-        name: '视图容器',
-        open: false,
-        pages: ['view', 'scroll-view', 'swiper']
-      }, {
-        id: 'content',
-        name: '基础内容',
-        open: false,
-        pages: ['text', 'icon', 'progress']
-      }, {
-        id: 'form',
-        name: '表单组件',
-        open: false,
-        pages: ['button', 'checkbox', 'form', 'input', 'label', 'picker', 'radio', 'slider', 'switch', 'textarea']
-      }, {
-        id: 'nav',
-        name: '导航',
-        open: false,
-        pages: ['navigator']
-      }, {
-        id: 'media',
-        name: '媒体组件',
-        open: false,
-        pages: ['image', 'audio', 'video']
-      }, {
-        id: 'map',
-        name: '地图',
-        pages: ['map']
-      }, {
-        id: 'canvas',
-        name: '画布',
-        pages: ['canvas']
-      }
-    ]
   },
-  kindToggle: function (e) {
-    var id = e.currentTarget.id, list = this.data.list;
-    for (var i = 0, len = list.length; i < len; ++i) {
-      if (list[i].id == id) {
-        list[i].open = !list[i].open
-      } else {
-        list[i].open = false
-      }
-    }
-    this.setData({
-      list: list
-    });
+  onLoad: function () {
+    var that = this;
+    var recordPerPage = "20";
+    var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage}, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
+  },
+  onPullDownRefresh: function () {
+    console.log("下拉刷新了");
+    var that = this;
+    var recordPerPage = "20";
+    var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
+  },
+  onReachBottom: function () {
+    console.log("上拉加载了");
+  },
+  //  点击日期组件确定事件  
+  bindDateChange: function (e) {
+    console.log(e.detail.value);
+    var that = this;
+    var recordPerPage = "20";
+    var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
+  },
+  onGetConsiliaNameDirSuccess: function (data, requestCode) {
+    var that = this;
+    that.setData({ patientNameList: data.content });
+  },
+  onGetConsiliaNameDirFail: function (data, requestCode) {
+    var that = this;
+    that.setData({ patientNameList: data.content });
   }
 })
 

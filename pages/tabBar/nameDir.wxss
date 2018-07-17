@@ -1,1 +1,16 @@
 @import "/pages/common/index.wxss";
+
+.search{
+  width: 80%;
+  display: flex;
+}
+.search_arr {
+  border: 1px solid #d0d0d0;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+}
+.search_arr input{
+  margin-left: 60rpx;
+  height: 60rpx;
+  border-radius: 5px;
+}

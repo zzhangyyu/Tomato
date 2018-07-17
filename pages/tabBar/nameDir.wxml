@@ -1,5 +1,33 @@
 <view class="index">
-  <view class="index-hd">
-    <view class="index-desc">这是按病人姓名分类的的目录。</view>
+
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='20' type='search'></icon>
+        <input class="" disabled placeholder="请输入关键字" value="{{searchValue}}"/>
+      </view>
+    </view>
+    <view class='sousuo'>搜索</view>
+
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{patientNameList}}" wx:key="{{item.visitingDate}}">
+        <navigator url="/pages/nameIntro/nameIntro?patientInfoId={{item.patientInfoId}}&patientName={{item.patientName}}">
+          <view class="common-list-item">
+            <view class="common-list-item-hd">
+              <view class="common-list-text">姓名：</view>
+              <view class="common-list-text">{{item.patientName}}</view>
+            </view>
+            <view class="common-list-item-hd">
+              <view class="common-list-text">性别：</view>
+              <view class="common-list-text">{{item.patientSex}}</view>
+            </view>    
+            <view class="common-list-item-hd">
+              <view class="common-list-text">就诊次数：</view>
+              <view class="common-list-text">{{item.consiliaCnt}}</view>
+            </view>               
+          </view>
+          </navigator>
+      </block>
+    </view>
   </view>
 </view>
