@@ -1,13 +1,11 @@
 <view class="index">
-
-    <view class="search">
-      <view class="df search_arr">
-        <icon class="searchcion" size='20' type='search'></icon>
-        <input class="" disabled placeholder="请输入关键字" value="{{searchValue}}"/>
-      </view>
+  <view class='search' bindtap="suo">
+    <view class="df search_arr">
+      <icon class="searchcion" size='20' type='search'></icon>
+      <input placeholder="请输入关键字" value="{{searchValue}}"/>
     </view>
-    <view class='sousuo'>搜索</view>
-
+    <view class='search-text'>搜索</view>
+  </view>
   <view class="index-bd">
     <view class="kind-list">
       <block wx:for-items="{{patientNameList}}" wx:key="{{item.visitingDate}}">

@@ -1,9 +1,11 @@
 @import "/pages/common/index.wxss";
 
 .search{
-  width: 80%;
   display: flex;
+  flex-direction: row;
+  margin: 0 10rpx 10rpx 0;
 }
+
 .search_arr {
   border: 1px solid #d0d0d0;
   border-radius: 10rpx;
@@ -13,4 +15,23 @@
   margin-left: 60rpx;
   height: 60rpx;
   border-radius: 5px;
+}
+ 
+.search-text {
+  margin-left: 15rpx;
+  width: 15%;
+  line-height: 150%;
+  text-align: center;
+  border: 1px solid #d0d0d0;
+  border-radius: 10rpx;
+}
+
+.searchcion {
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  position: absolute;
+  left:25rpx;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  text-align: center;
 }
