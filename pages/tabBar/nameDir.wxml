@@ -1,10 +1,10 @@
 <view class="index">
-  <view class='search' bindtap="suo">
-    <view class="df search_arr">
-      <icon class="searchcion" size='20' type='search'></icon>
-      <input placeholder="请输入关键字" value="{{searchValue}}"/>
+  <view class='search'>
+    <view class="search_arr">
+      <icon class="search-icon" size='20' type='search'></icon>
+      <input placeholder="请输入关键字" value="{{searchValue}}" bindinput='searchValueInput'/>
     </view>
-    <view class='search-text'>搜索</view>
+    <view class='search-text' bindtap="search">搜索</view>
   </view>
   <view class="index-bd">
     <view class="kind-list">
@@ -28,4 +28,11 @@
       </block>
     </view>
   </view>
+
+  <view class="nav" bindtouchmove="touchmove" bindtouchcancel="touchcancel" bindtouchend="touchend">
+    <view class="letter" bindtap="tabLetter" data-index="{{item}}" wx:for="{{letters}}">
+      <text class="letter-text {{selected == item ? 'letter-actived' : ''}}">{{item}}</text>
+    </view>
+  </view>
+
 </view>

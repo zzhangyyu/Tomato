@@ -1,12 +1,46 @@
 var networkUtil = require("../../utils/network.js");
 Page({
   data: {
+    // 当前选择的导航字母
+    selected: 0,
+    // 选择字母视图滚动的位置id
+    scrollIntoView: 'A',
+    // 导航字母
+    letters: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+      'U', 'V', 'W', 'X', 'Y', 'Z']
   },
   onLoad: function () {
     var that = this;
     var recordPerPage = "20";
     var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage}, "os": "Android", "phone": "15311496135", "version": "V1.0" };
     networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
+
+
+
+    const res = wx.getSystemInfoSync(),
+      letters = this.data.letters;
+    // 设备信息
+    this.setData({
+      windowHeight: res.windowHeight,
+      windowWidth: res.windowWidth,
+      pixelRatio: res.pixelRatio
+    });
+    const navHeight = this.data.windowHeight * 0.94, // 
+      eachLetterHeight = navHeight / 26,
+      comTop = (this.data.windowHeight - navHeight) / 2,
+      temp = [];
+    this.setData({
+      eachLetterHeight: eachLetterHeight
+    });
+    for (let i = 0, len = letters.length; i < len; i++) {
+      const x = this.data.windowWidth - (10 + 50) / this.data.pixelRatio,
+        y = comTop + (i * eachLetterHeight);
+      temp.push([x, y]);
+    }
+    this.setData({
+      lettersPosition: temp
+    })
+
   },
   onPullDownRefresh: function () {
     console.log("下拉刷新了");
@@ -15,24 +49,78 @@ Page({
     var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
     networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
   },
+
   onReachBottom: function () {
     console.log("上拉加载了");
   },
-  //  点击日期组件确定事件  
-  bindDateChange: function (e) {
-    console.log(e.detail.value);
-    var that = this;
-    var recordPerPage = "20";
-    var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
-    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
-  },
+
   onGetConsiliaNameDirSuccess: function (data, requestCode) {
     var that = this;
     that.setData({ patientNameList: data.content });
   },
+
   onGetConsiliaNameDirFail: function (data, requestCode) {
     var that = this;
     that.setData({ patientNameList: data.content });
+  },
+
+  search:function(e){
+    var that = this;
+    var patientNameLike = that.data.searchValue;
+    var reqJson = { "content": { "patientNameLike": patientNameLike}, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
+  },
+
+  searchValueInput: function (e) {
+    var value = e.detail.value;
+    console.log(value);
+    this.setData({
+      searchValue: value,
+    });
+  },
+
+  tabLetter(e) {
+    const index = e.currentTarget.dataset.index;
+    console.log(index);
+    this.setData({
+      selected: index,
+      scrollIntoView: index
+    })
+    this.cleanAcitvedStatus();
+  },
+  // 清除字母选中状态
+  cleanAcitvedStatus() {
+    setTimeout(() => {
+      this.setData({
+        selected: 0
+      })
+    }, 1000);
+  },
+  touchmove(e) {
+    const x = e.touches[0].clientX,
+      y = e.touches[0].clientY,
+      lettersPosition = this.data.lettersPosition,
+      eachLetterHeight = this.data.eachLetterHeight,
+      letters = this.data.letters;
+    console.log(y);
+    // 判断触摸点是否在字母导航栏上
+    if (x >= lettersPosition[0][0]) {
+      for (let i = 0, len = lettersPosition.length; i < len; i++) {
+        // 判断落在哪个字母区域，取出对应字母所在数组的索引，根据索引更新selected及scroll-into-view的值
+        const _y = lettersPosition[i][1], // 单个字母所处高度
+          __y = _y + eachLetterHeight; // 单个字母最大高度取值范围， 50为字母高50rpx
+        if (y >= _y && y <= __y) {
+          this.setData({
+            selected: letters[i],
+            scrollIntoView: letters[i]
+          });
+          break;
+        }
+      }
+    }
+  },
+  touchend(e) {
+    this.cleanAcitvedStatus();
   }
 })
 
