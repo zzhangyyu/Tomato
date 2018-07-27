@@ -15,7 +15,7 @@ function postJson(url, json, message, onNetworkSuccess, onNetworkFail) {
     url: url,
     data: json,
     header: {
-      contentType: 'application/json;charset=utf-8'
+      'content-type': 'application/json;charset=utf-8'
     },
     method: 'POST',
     success: function (res) {
