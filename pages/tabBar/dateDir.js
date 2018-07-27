@@ -8,7 +8,7 @@ Page({
     var queryEndDate = "2018-08-01";
     var recordPerPage = "20";
     var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage, "queryStartDate": queryStartDate, "queryEndDate": queryEndDate }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
-    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
+    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
   },
   onPullDownRefresh:function(){
     console.log("下拉刷新了");
@@ -17,7 +17,7 @@ Page({
     var queryEndDate = "2018-08-01";
     var recordPerPage = "20";
     var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage, "queryStartDate": queryStartDate, "queryEndDate": queryEndDate }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
-    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
+    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
   },
   onReachBottom:function () {
     console.log("上拉加载了");
@@ -30,7 +30,7 @@ Page({
     var queryEndDate = e.detail.value;
     var recordPerPage = "20";
     var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage, "queryStartDate": queryStartDate, "queryEndDate": queryEndDate }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
-    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
+    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
   },
   onGetConsiliaDateDirSuccess: function (data, requestCode) {
     var that = this;

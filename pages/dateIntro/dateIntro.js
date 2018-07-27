@@ -8,7 +8,7 @@ Page({
     var queryDate = option.visitingDate;
     var recordPerPage = "20";
     var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage, "queryDate": queryDate }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
-    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaDateIntro", reqJson, "正在加载...", that.onGetConsiliaDateIntroSuccess, that.onGetConsiliaDateIntroFail);
+    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateIntro", reqJson, "正在加载...", that.onGetConsiliaDateIntroSuccess, that.onGetConsiliaDateIntroFail);
   },
   onGetConsiliaDateIntroSuccess: function (data, requestCode) {
     var that = this;

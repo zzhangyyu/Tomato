@@ -13,7 +13,7 @@ Page({
     var that = this;
     var recordPerPage = "20";
     var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage}, "os": "Android", "phone": "15311496135", "version": "V1.0" };
-    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
+    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
 
 
 
@@ -47,7 +47,7 @@ Page({
     var that = this;
     var recordPerPage = "20";
     var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
-    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
+    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
   },
 
   onReachBottom: function () {
@@ -68,7 +68,7 @@ Page({
     var that = this;
     var patientNameLike = that.data.searchValue;
     var reqJson = { "content": { "patientNameLike": patientNameLike}, "os": "Android", "phone": "15311496135", "version": "V1.0" };
-    networkUtil.postJson("http://118.24.19.145/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
+    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
   },
 
   searchValueInput: function (e) {
