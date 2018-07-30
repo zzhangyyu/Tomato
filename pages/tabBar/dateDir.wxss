@@ -1,4 +1,4 @@
-@import "/pages/common/index.wxss";
+@import "/pages/common/wxss/common.wxss";
 
 .filter-hd {
   padding: 20rpx;

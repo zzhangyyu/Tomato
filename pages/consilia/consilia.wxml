@@ -1,6 +1,6 @@
 <view class="index">
   <view class="page-indicator">
-    <view>就诊时间：</view>
+    <view>就诊日期：</view>
     <view>{{consilia.visitingDate}}</view>
   </view>
   <view class="index-bd">
@@ -14,28 +14,30 @@
       <view class='consilia-basic-info'>{{consilia.zodiac}}</view>
     </view>
     <view class="consilia-pulse-info-hd">
-      <view class='consilia-common-info'>脉象：</view>
-      <view class='consilia-common-info'>{{consilia.pulse}}</view>
+      <view class='consilia-pulse-const'>脉象：</view>
+      <view class='consilia-pulse-var'>{{consilia.pulse}}</view>
     </view>
-    <view class="consilia-pulse-info-hd">
-      <view class='consilia-common-info'>舌象：</view>
-      <view class='consilia-common-info'>{{consilia.tongue}}</view>
-    </view>    
-    <view class="consilia-master-say-info-hd">
-      <view class='consilia-common-info'>师曰</view>
+    <view class="consilia-tongue-info-hd">
+      <view class='consilia-tongue-const'>舌象：</view>
+      <view class='consilia-tongue-var'>{{consilia.tongue}}</view>
+    </view>
+    <view class="consilia-zhaoSir-say-info-hd">
+      <view class='consilia-zhaoSir-say-const'>师曰：</view>
     </view>
     <view class="consilia-medicine-name-info-hd">
-      <view class='consilia-common-info'>{{consilia.prescriptionName}}</view>
+      <view class='consilia-medicine-name-const'>经方：</view>
+      <view class=''>{{consilia.prescriptionName}}</view>
     </view>
     <view class="consilia-medicine-detail-info-hd">
-      <view class='consilia-common-info'>{{consilia.prescriptionDetail}}</view>
+      <view class=''>{{consilia.prescriptionDetail}}</view>
+    </view>
+    <view class="consilia-medicine-dosage-info-hd">
+      <view class=''>{{consilia.prescriptionCount}}</view>
+      <view class=''>{{consilia.prescriptionDuration}}</view>
     </view>
     <view class="consilia-medicine-method-info-hd">
-      <view class='consilia-common-info'>{{consilia.prescriptionMethod}}</view>
-    </view>    
-    <view class="consilia-medicine-dosage-info-hd">
-      <view class='consilia-common-info'>{{consilia.prescriptionCount}}</view>
-      <view class='consilia-common-info'>{{consilia.prescriptionDuration}}</view>
-    </view>    
+      <view class=''>{{consilia.prescriptionMethod}}</view>
+    </view>
+
   </view>
 </view>

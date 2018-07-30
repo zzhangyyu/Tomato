@@ -10,13 +10,13 @@
       <block wx:for-items="{{patientdateList}}" wx:key="{{item.visitingDate}}">
         <navigator url="/pages/dateIntro/dateIntro?visitingDate={{item.visitingDate}}">
           <view class="common-list-item">
-            <view id="{{item.visitingDate}}" class="common-list-item-hd">
-              <view class="common-list-text">就诊日期：</view>
-              <view class="common-list-text">{{item.visitingDate}}</view>
+            <view class="common-list-item-content">
+              <view class="common-list-text-const">就诊日期：</view>
+              <view class="common-list-text-var">{{item.visitingDate}}</view>
             </view>
-            <view id="{{item.visitingDate}}" class="common-list-item-hd">
-              <view class="common-list-text">就诊人数：</view>
-              <view class="common-list-text">{{item.patientCnt}}</view>
+            <view class="common-list-item-content">
+              <view class="common-list-text-const">就诊人数：</view>
+              <view class="common-list-text-var">{{item.patientCnt}}</view>
             </view>    
           </view>
           </navigator>

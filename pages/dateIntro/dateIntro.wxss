@@ -1,1 +1,1 @@
-@import "/pages/common/index.wxss";
+@import "/pages/common/wxss/common.wxss";

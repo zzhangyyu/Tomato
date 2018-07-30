@@ -1,11 +1,11 @@
-var networkUtil = require("../../utils/network.js");
+var networkUtil = require("../common/js/network.js");
 Page({
   data: {
   },
   onLoad:function(){
     var that = this;
-    var queryStartDate = "2017-06-01";
-    var queryEndDate = "2018-08-01";
+    var queryStartDate = "";
+    var queryEndDate = "";
     var recordPerPage = "20";
     var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage, "queryStartDate": queryStartDate, "queryEndDate": queryEndDate }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
@@ -13,8 +13,8 @@ Page({
   onPullDownRefresh:function(){
     console.log("下拉刷新了");
     var that = this;
-    var queryStartDate = "2017-06-01";
-    var queryEndDate = "2018-08-01";
+    var queryStartDate = "";
+    var queryEndDate = "";
     var recordPerPage = "20";
     var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage, "queryStartDate": queryStartDate, "queryEndDate": queryEndDate }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);

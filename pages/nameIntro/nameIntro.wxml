@@ -8,9 +8,9 @@
       <block wx:for-items="{{nameIntroList}}" wx:key="{{item.patientInfoId}}">
         <navigator url="/pages/consilia/consilia?patientConditionId={{item.patientConditionId}}">
           <view class="common-list-item">
-            <view class="common-list-item-hd">
-              <view class="common-list-text">就诊日期：</view>
-              <view class="common-list-text">{{item.visitingDate}}</view>
+            <view class="common-list-item-content">
+              <view class="common-list-text-const">就诊日期：</view>
+              <view class="common-list-text-var">{{item.visitingDate}}</view>
             </view>
           </view>
           </navigator>

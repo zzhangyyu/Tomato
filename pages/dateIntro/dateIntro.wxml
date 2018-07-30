@@ -1,6 +1,6 @@
 <view class="index">
   <view class="page-indicator">
-    <view>就诊时间：</view>
+    <view>就诊日期：</view>
     <view>{{visitingDate}}</view>
   </view>
   <view class="index-bd">
@@ -9,17 +9,17 @@
         <navigator url="/pages/consilia/consilia?patientConditionId={{item.patientConditionId}}">
           <view class="common-list-item">
             <view>
-              <view id="{{item.patientInfoId}}" class="common-list-item-hd">
-                <view class="common-list-text">姓名：</view>
-                <view class="common-list-text">{{item.patientName}}</view>
+              <view class="common-list-item-content">
+                <view class="common-list-text-const">姓名：</view>
+                <view class="common-list-text-var">{{item.patientName}}</view>
               </view>
-              <view id="{{item.patientInfoId}}" class="common-list-item-hd">
-                <view class="common-list-text">性别：</view>
-                <view class="common-list-text">{{item.patientSex}}</view>
+              <view class="common-list-item-content">
+                <view class="common-list-text-const">性别：</view>
+                <view class="common-list-text-var">{{item.patientSex}}</view>
               </view>
-            </view> 
+            </view>
           </view>
-          </navigator>
+        </navigator>
       </block>
     </view>
   </view>

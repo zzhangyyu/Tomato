@@ -1,64 +1,102 @@
-@import "/pages/common/index.wxss";
+@import "/pages/common/wxss/common.wxss";
 
-.consilia-basic-info-hd{
-  background-color: #cc7a00;
+.consilia-basic-info-hd {
+  background-color: #fff;
   padding: 10rpx;
   display: flex;
   justify-content: center;
 }
 
-.consilia-pulse-info-hd{
-  background-color: #FFFFFF;
+.consilia-pulse-info-hd {
+  background-color: #fff;
   padding: 10rpx;
   display: flex;
-  margin: 10rpx 0 0 0;
+  margin: 20rpx 0 0 0;
   justify-content: center;
+  align-items: center;
 }
 
-.consilia-master-say-info-hd{
-  background-color: #FFFFFF;
+.consilia-pulse-const {
+  font-weight: bold;
+  width: 15%;
+  height: 100%;
+}
+
+.consilia-pulse-var {
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.consilia-tongue-info-hd {
+  background-color: #fff;
   padding: 10rpx;
   display: flex;
   margin: 10rpx 0 0 0;
   justify-content: flex-start;
 }
 
-.consilia-medicine-name-info-hd{
-  background-color: #FFFFFF;
+.consilia-tongue-const {
+  font-weight: bold;
+  width: 15%;
+  height: 100%;
+}
+
+.consilia-tongue-var {
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.consilia-zhaoSir-say-info-hd {
+  background-color: #fff;
+  padding: 10rpx;
+  display: flex;
+  margin: 20rpx 0 0 0;
+  justify-content: flex-start;
+}
+
+.consilia-zhaoSir-say-const {
+  font-weight: bold;
+  width: 15%;
+  height: 100%;
+}
+
+.consilia-zhaoSir-say-var {
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.consilia-medicine-name-info-hd {
+  background-color: #fff;
+  padding: 10rpx;
+  display: flex;
+  margin: 20rpx 0 0 0;
+  justify-content: flex-start;
+}
+
+.consilia-medicine-detail-info-hd {
+  background-color: #fff;
   padding: 10rpx;
   display: flex;
   margin: 10rpx 0 0 0;
   justify-content: flex-start;
 }
 
-.consilia-medicine-detail-info-hd{
-  background-color: #FFFFFF;
+.consilia-medicine-dosage-info-hd {
+  background-color: #fff;
+  padding: 10rpx;
+  display: flex;
+  margin: 20rpx 0 0 0;
+  justify-content: flex-start;
+}
+
+.consilia-medicine-method-info-hd {
+  background-color: #fff;
   padding: 10rpx;
   display: flex;
   margin: 10rpx 0 0 0;
   justify-content: flex-start;
 }
 
-.consilia-medicine-dosage-info-hd{
-  background-color: #FFFFFF;
-  padding: 10rpx;
-  display: flex;
-  margin: 10rpx 0 0 0;
-  justify-content: flex-start;
-}
-
-.consilia-medicine-method-info-hd{
-  background-color: #FFFFFF;
-  padding: 10rpx;
-  display: flex;
-  margin: 10rpx 0 0 0;
-  justify-content: flex-start;
-}
-
-.consilia-basic-info{
+.consilia-basic-info {
   margin: 0 50rpx 0 50rpx;
-}
-
-.consilia-common-info{
-  margin: 0 auto;
 }

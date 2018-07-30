@@ -1,4 +1,4 @@
-var networkUtil = require("../../utils/network.js");
+var networkUtil = require("../common/js/network.js");
 Page({
   data: {
     // 当前选择的导航字母

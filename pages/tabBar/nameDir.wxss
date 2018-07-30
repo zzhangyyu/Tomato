@@ -1,4 +1,4 @@
-@import "/pages/common/index.wxss";
+@import "/pages/common/wxss/common.wxss";
 
 /* 搜索框样式 */
 .search{

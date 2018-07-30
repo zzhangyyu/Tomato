@@ -1,0 +1,41 @@
+.index-hd {
+  padding: 80rpx;
+  text-align: center;
+}
+.index-bd {
+  padding: 0 30rpx 40rpx;
+}
+
+.common-list-item {
+  margin: 20rpx 0;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.common-list-item-content {
+  padding: 30rpx;
+  display: flex;
+  align-items: flex-start;
+  transition: opacity .3s;
+}
+
+.common-list-item:first-child {
+  margin-top: 0;
+}
+.common-list-text-const{
+  font-weight: bold;
+}
+.common-list-text-var{
+  flex: 1;
+}
+.common-list-img {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.page-indicator{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
