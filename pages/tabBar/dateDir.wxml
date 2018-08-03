@@ -1,5 +1,5 @@
 <view class="index">
-  <picker mode="date" value="{{date}}" start="1978-01-01" end="2999-01-01" bindchange="bindDateChange">  
+  <picker mode="date" value="{{date}}" start="2008-01-01" end="2050-01-01" bindchange="bindDateChange">
     <view class="picker filter-hd">
       <image class="filter-image" src="/image/ic_normal_date.png"></image>
       <view class="filter-text">筛选</view>
@@ -10,16 +10,21 @@
       <block wx:for-items="{{patientdateList}}" wx:key="{{item.visitingDate}}">
         <navigator url="/pages/dateIntro/dateIntro?visitingDate={{item.visitingDate}}">
           <view class="common-list-item">
-            <view class="common-list-item-content">
-              <view class="common-list-text-const">就诊日期：</view>
-              <view class="common-list-text-var">{{item.visitingDate}}</view>
+            <view class="common-list-item-left">
+              <view class="common-list-item-left-order">{{index+1}}</view>
             </view>
-            <view class="common-list-item-content">
-              <view class="common-list-text-const">就诊人数：</view>
-              <view class="common-list-text-var">{{item.patientCnt}}</view>
-            </view>    
+            <view>
+              <view class="common-list-item-right">
+                <view class="common-list-text-const">就诊日期：</view>
+                <view class="common-list-text-var">{{item.visitingDate}}</view>
+              </view>
+              <view class="common-list-item-right">
+                <view class="common-list-text-const">就诊人数：</view>
+                <view class="common-list-text-var">{{item.patientCnt}}</view>
+              </view>
+            </view>
           </view>
-          </navigator>
+        </navigator>
       </block>
     </view>
   </view>

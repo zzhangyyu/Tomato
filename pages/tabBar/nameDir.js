@@ -56,7 +56,17 @@ Page({
 
   onGetConsiliaNameDirSuccess: function (data, requestCode) {
     var that = this;
-    that.setData({ patientNameList: data.content });
+    var internetData = data.content;
+    if (internetData == null || internetData.length == 0) {
+      wx.showToast({
+        title: '无数据',
+        icon:'none',
+        duration:1000,
+        mask:true
+      })
+    }
+    that.setData({ patientNameList: internetData });
+    
   },
 
   onGetConsiliaNameDirFail: function (data, requestCode) {
@@ -73,10 +83,15 @@ Page({
 
   searchValueInput: function (e) {
     var value = e.detail.value;
-    console.log(value);
     this.setData({
       searchValue: value,
     });
+    if (value == null || value==''){
+      var that = this;
+      var patientNameLike = that.data.searchValue;
+      var reqJson = { "content": { "patientNameLike": patientNameLike }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+      networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
+    }
   },
 
   tabLetter(e) {

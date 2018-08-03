@@ -11,10 +11,22 @@
   background-color: #FFFFFF;
   border-radius: 10rpx;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
-.common-list-item-content {
-  padding: 30rpx;
+.common-list-item-left{
+  padding: 20rpx;
+  width: 10%;
+}
+
+
+.common-list-item-left-order{
+  font-weight: bold;
+}
+
+.common-list-item-right {
+  padding: 20rpx;
   display: flex;
   align-items: flex-start;
   transition: opacity .3s;

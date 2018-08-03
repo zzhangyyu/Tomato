@@ -11,18 +11,23 @@
       <block wx:for-items="{{patientNameList}}" wx:key="{{item.visitingDate}}">
         <navigator url="/pages/nameIntro/nameIntro?patientInfoId={{item.patientInfoId}}&patientName={{item.patientName}}">
           <view class="common-list-item">
-            <view class="common-list-item-content">
-              <view class="common-list-text-const">姓名：</view>
-              <view class="common-list-text-var">{{item.patientName}}</view>
+            <view class="common-list-item-left">
+              <view class="common-list-text-const">{{index+1}}</view>
             </view>
-            <view class="common-list-item-content">
-              <view class="common-list-text-const">性别：</view>
-              <view class="common-list-text-var">{{item.patientSex}}</view>
-            </view>    
-            <view class="common-list-item-content">
-              <view class="common-list-text-const">就诊次数：</view>
-              <view class="common-list-text-var">{{item.consiliaCnt}}</view>
-            </view>               
+            <view>
+              <view class="common-list-item-right">
+                <view class="common-list-text-const">姓名：</view>
+                <view class="common-list-text-var">{{item.patientName}}</view>
+              </view>
+              <view class="common-list-item-right">
+                <view class="common-list-text-const">性别：</view>
+                <view class="common-list-text-var">{{item.patientSex}}</view>
+              </view>    
+              <view class="common-list-item-right">
+                <view class="common-list-text-const">就诊次数：</view>
+                <view class="common-list-text-var">{{item.consiliaCnt}}</view>
+              </view>
+            </view>           
           </view>
           </navigator>
       </block>
