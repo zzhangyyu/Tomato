@@ -7,12 +7,14 @@ Page({
     scrollIntoView: 'A',
     // 导航字母
     letters: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-      'U', 'V', 'W', 'X', 'Y', 'Z']
+      'U', 'V', 'W', 'X', 'Y', 'Z'],
+    pageIdx: 1,
+    patientNameList: [],
+    isLastPage: false
   },
   onLoad: function () {
     var that = this;
-    var recordPerPage = "20";
-    var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage}, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+    var reqJson = { "content": { "pageIdx": "1", "recordPerPage": getApp().globalData.recordPerPage}, "os": "Android", "phone": "15311496135", "version": "V1.0" };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
 
 
@@ -45,15 +47,12 @@ Page({
   onPullDownRefresh: function () {
     console.log("下拉刷新了");
     var that = this;
-    var recordPerPage = "20";
-    var reqJson = { "content": { "pageIdx": "1", "recordPerPage": recordPerPage }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+    var reqJson = { "content": { "pageIdx": "1", "recordPerPage": getApp().globalData.recordPerPage }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
   },
-
   onReachBottom: function () {
     console.log("上拉加载了");
   },
-
   onGetConsiliaNameDirSuccess: function (data, requestCode) {
     var that = this;
     var internetData = data.content;
@@ -65,19 +64,38 @@ Page({
         mask:true
       })
     }
+    that.setData({ pageIdx: 1 });
+    that.setData({ isLastPage: false });
     that.setData({ patientNameList: internetData });
-    
+    wx.stopPullDownRefresh();
   },
-
   onGetConsiliaNameDirFail: function (data, requestCode) {
     var that = this;
     that.setData({ patientNameList: data.content });
+    wx.stopPullDownRefresh();
   },
+  onLoadMoreConsiliaNameDirSuccess: function (data, requestCode) {
+    var that = this;
+    that.setData({ pageIdx: that.data.pageIdx + 1 });
+    var curPatientNameList = that.data.patientNameList;
+    var internetPatientNameListData = data.content;
+    if (internetPatientNameListData.length < getApp().globalData.recordPerPage) {
+      that.setData({ isLastPage: true });
+    }
+    for (var i = 0; i < internetPatientNameListData.length; i++) {
+      curPatientNameList.push(internetPatientNameListData[i]);
+    }
+    that.setData({ patientNameList: curPatientNameList });
 
+  },
+  onLoadMoreConsiliaNameDirFail: function (data, requestCode) {
+    var that = this;
+    that.setData({ patientNameList: data.content });
+  },
   search:function(e){
     var that = this;
     var patientNameLike = that.data.searchValue;
-    var reqJson = { "content": { "patientNameLike": patientNameLike}, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+    var reqJson = { "content": { "patientNameLike": patientNameLike, "pageIdx": "1", "recordPerPage": getApp().globalData.recordPerPage}, "os": "Android", "phone": "15311496135", "version": "V1.0" };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
   },
 
@@ -89,7 +107,7 @@ Page({
     if (value == null || value==''){
       var that = this;
       var patientNameLike = that.data.searchValue;
-      var reqJson = { "content": { "patientNameLike": patientNameLike }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
+      var reqJson = { "content": { "patientNameLike": patientNameLike, "pageIdx": "1", "recordPerPage": getApp().globalData.recordPerPage }, "os": "Android", "phone": "15311496135", "version": "V1.0" };
       networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
     }
   },
