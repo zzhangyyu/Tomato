@@ -65,12 +65,24 @@
   flex-wrap: wrap;
 }
 
+.consilia-medicine-name-const {
+  font-weight: bold;
+  width: 15%;
+  height: 100%;
+}
+
 .consilia-medicine-name-info-hd {
   background-color: #fff;
   padding: 10rpx;
   display: flex;
   margin: 20rpx 0 0 0;
   justify-content: flex-start;
+}
+
+.consilia-medicine-detail-const {
+  font-weight: bold;
+  width: 15%;
+  height: 100%;
 }
 
 .consilia-medicine-detail-info-hd {
@@ -81,12 +93,24 @@
   justify-content: flex-start;
 }
 
+.consilia-medicine-dosage-const {
+  font-weight: bold;
+  width: 15%;
+  height: 100%;
+}
+
 .consilia-medicine-dosage-info-hd {
   background-color: #fff;
   padding: 10rpx;
   display: flex;
   margin: 20rpx 0 0 0;
   justify-content: flex-start;
+}
+
+.consilia-medicine-method-const {
+  font-weight: bold;
+  width: 30%;
+  height: 100%;
 }
 
 .consilia-medicine-method-info-hd {
