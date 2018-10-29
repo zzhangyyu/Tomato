@@ -1,6 +1,6 @@
 /* reset */
 page {
-  background-color: #F8F8F8;
+  background-color:#f4f4f4;
   height: 100%;
   font-size: 32rpx;
 }

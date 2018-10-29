@@ -7,120 +7,27 @@
   justify-content: center;
 }
 
-.consilia-pulse-info-hd {
-  background-color: #fff;
-  padding: 10rpx;
-  display: flex;
-  margin: 20rpx 0 0 0;
-  justify-content: center;
-  align-items: center;
-}
-
-.consilia-pulse-const {
-  font-weight: bold;
-  width: 15%;
-  height: 100%;
-}
-
-.consilia-pulse-var {
-  flex: 1;
-  flex-wrap: wrap;
-}
-
-.consilia-tongue-info-hd {
-  background-color: #fff;
-  padding: 10rpx;
-  display: flex;
-  margin: 10rpx 0 0 0;
-  justify-content: flex-start;
-}
-
-.consilia-tongue-const {
-  font-weight: bold;
-  width: 15%;
-  height: 100%;
-}
-
-.consilia-tongue-var {
-  flex: 1;
-  flex-wrap: wrap;
-}
-
-.consilia-zhaoSir-say-info-hd {
-  background-color: #fff;
-  padding: 10rpx;
-  display: flex;
-  margin: 20rpx 0 0 0;
-  justify-content: flex-start;
-}
-
-.consilia-zhaoSir-say-const {
-  font-weight: bold;
-  width: 15%;
-  height: 100%;
-}
-
-.consilia-zhaoSir-say-var {
-  flex: 1;
-  flex-wrap: wrap;
-}
-
-.consilia-medicine-name-const {
-  font-weight: bold;
-  width: 15%;
-  height: 100%;
-}
-
-.consilia-medicine-name-info-hd {
-  background-color: #fff;
-  padding: 10rpx;
-  display: flex;
-  margin: 20rpx 0 0 0;
-  justify-content: flex-start;
-}
-
-.consilia-medicine-detail-const {
-  font-weight: bold;
-  width: 15%;
-  height: 100%;
-}
-
-.consilia-medicine-detail-info-hd {
-  background-color: #fff;
-  padding: 10rpx;
-  display: flex;
-  margin: 10rpx 0 0 0;
-  justify-content: flex-start;
-}
-
-.consilia-medicine-dosage-const {
-  font-weight: bold;
-  width: 15%;
-  height: 100%;
-}
-
-.consilia-medicine-dosage-info-hd {
-  background-color: #fff;
-  padding: 10rpx;
-  display: flex;
-  margin: 20rpx 0 0 0;
-  justify-content: flex-start;
-}
-
-.consilia-medicine-method-const {
-  font-weight: bold;
-  width: 30%;
-  height: 100%;
-}
-
-.consilia-medicine-method-info-hd {
-  background-color: #fff;
-  padding: 10rpx;
-  display: flex;
-  margin: 10rpx 0 0 0;
-  justify-content: flex-start;
-}
-
 .consilia-basic-info {
   margin: 0 50rpx 0 50rpx;
+}
+
+.consilia-hd {
+  background-color: #fff;
+  padding: 10rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 20rpx 0 0 0;
+  justify-content: left;
+}
+
+.consilia-const {
+  font-weight: bold;
+  height: 100%;
+}
+
+.consilia-var {
+  text-indent: 50rpx;
+  margin-top: 10rpx;
+  flex: 1;
+  flex-wrap: wrap;
 }

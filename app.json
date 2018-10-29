@@ -33,8 +33,8 @@
       },
       {
         "pagePath": "pages/tabBar/mine",
-        "iconPath": "image/icon_tab_name_dir.png",
-        "selectedIconPath": "image/icon_tab_name_dir_HL.png",
+        "iconPath": "image/icon_medicine.png",
+        "selectedIconPath": "image/icon_medicine_HL.png",
         "text": "我的"
       }
     ]
