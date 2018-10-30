@@ -1,8 +1,13 @@
 <view class="index" hidden='{{hidden}}'>
   <view class="page-indicator">
-    <view>就诊日期：</view>
-    <view>{{consilia.visitingDate}}</view>
-  </view>
+    <view class='page-indicator-item'>
+      <image class='page-indicator-image' src='../../image/icon_indicator.png'></image>
+    </view>
+    <view class='page-indicator-item'>
+      <view>就诊日期：</view>
+      <view>{{consilia.visitingDate}}</view>
+    </view>
+  </view>  
   <view class="index-bd">
     <view class="consilia-basic-info-hd">
       <view class="consilia-basic-info">{{consilia.name}}</view>
