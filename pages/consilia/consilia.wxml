@@ -7,36 +7,37 @@
       <view>就诊日期：</view>
       <view>{{consilia.visitingDate}}</view>
     </view>
-  </view>  
+  </view>
   <view class="index-bd">
-    <view class="consilia-basic-info-hd">
-      <view class="consilia-basic-info">{{consilia.name}}</view>
-      <view class="consilia-basic-info">{{consilia.sex}}</view>
-      <view class="consilia-basic-info">{{consilia.age}}</view>
+    <view class="consilia-basic-info">
+      <view class="consilia-basic-info-item">
+        <view class="consilia-basic-info-var">{{consilia.name}}</view>
+        <view class="consilia-basic-info-var">{{consilia.sex}}</view>
+        <view class="consilia-basic-info-var">{{consilia.age}}</view>
+      </view>
+      <view class="consilia-basic-info-item">
+        <view class="consilia-basic-info-var">{{consilia.birthday}}</view>
+        <view class="consilia-basic-info-var">{{consilia.zodiac}}</view>
+      </view>
     </view>
-    <view class="consilia-basic-info-hd">
-      <view class="consilia-basic-info">{{consilia.birthday}}</view>
-      <view class="consilia-basic-info">{{consilia.zodiac}}</view>
-    </view>
-
-    <view wx:if="{{consilia.addCondition !=null}}" class="consilia-hd">
+    <view wx:if="{{consilia.addCondition !=null && consilia.addCondition !=''}}" class="consilia-hd">
       <view class="consilia-const">病情描述</view>
       <view class="consilia-var">{{consilia.addCondition}}</view>
     </view>
 
-    <view wx:if="{{consilia.pulse !=null}}" class="consilia-hd">
+    <view wx:if="{{consilia.pulse !=null && consilia.pulse !=''}}" class="consilia-hd">
       <view class="consilia-const">脉</view>
       <view class="consilia-var">{{consilia.pulse}}</view>
     </view>
-    <view wx:if="{{consilia.tongue !=null}}" class="consilia-hd">
+    <view wx:if="{{consilia.tongue !=null && consilia.tongue !=''}}" class="consilia-hd">
       <view class="consilia-const">舌</view>
       <view class="consilia-var">{{consilia.tongue}}</view>
     </view>
-    <view wx:if="{{consilia.prescriptionName !=null}}" class="consilia-hd">
+    <view wx:if="{{consilia.prescriptionName !=null && consilia.prescriptionName !=''}}" class="consilia-hd">
       <view class="consilia-const">方</view>
       <view class="consilia-var">{{consilia.prescriptionName}}</view>
     </view>
-    <view wx:if="{{consilia.prescriptionDetail !=null}}" class="consilia-hd">
+    <view wx:if="{{consilia.prescriptionDetail !=null && consilia.prescriptionDetail !=''}}" class="consilia-hd">
       <view class="consilia-const">药</view>
       <view class="consilia-var">{{consilia.prescriptionDetail}}</view>
     </view>
@@ -44,11 +45,11 @@
       <view class="consilia-const">剂量</view>
       <view class="consilia-var">{{consilia.prescriptionCount}}剂/{{consilia.prescriptionDuration}}</view>
     </view>
-    <view wx:if="{{consilia.prescriptionMethod !=null}}" class="consilia-hd">
+    <view wx:if="{{consilia.prescriptionMethod !=null && consilia.prescriptionMethod !=''}}" class="consilia-hd">
       <view class="consilia-const">煎服方法</view>
       <view class="consilia-var">{{consilia.prescriptionMethod}}</view>
     </view>
-    <view wx:if="{{consilia.analysis !=null}}" class="consilia-hd">
+    <view wx:if="{{consilia.analysis !=null && consilia.analysis !=''}}" class="consilia-hd">
       <view class="consilia-const">师曰</view>
       <view class="consilia-var">{{consilia.analysis}}</view>
     </view>

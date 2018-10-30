@@ -4,7 +4,6 @@
       <image class='page-indicator-image' src='../../image/icon_indicator.png'></image>
     </view>
     <view class='page-indicator-item'>
-      <view>姓名：</view>
       <view>{{patientName}}</view>
     </view>
   </view>  

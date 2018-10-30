@@ -1,13 +1,20 @@
 @import "/pages/common/wxss/common.wxss";
 
-.consilia-basic-info-hd {
+.consilia-basic-info {
   background-color: #fff;
-  padding: 10rpx;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 30rpx
+}
+
+.consilia-basic-info-item {
+  display: flex;
+  padding: 10rpx;
   justify-content: center;
 }
 
-.consilia-basic-info {
+.consilia-basic-info-var {
   margin: 0 50rpx 0 50rpx;
 }
 

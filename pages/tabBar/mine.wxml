@@ -1,4 +1,8 @@
 <view class="index">
-  <view class=''>敬请期待</view>
- 
+  <view class='mine-bg'>未完待续，后续如果精力允许的话，想加入以下内容：</view>
+  <view class='mine-bg'>1、师傅讲的金刚经</view>
+  <view class='mine-bg'>2、赵老师说的话</view>
+  <view class='mine-bg'>3、好的文章、网页</view>
+  <view class='mine-bg'>4、收藏的病人</view>
+  <view class='mine-bg'>5、收藏的病历</view>
 </view>

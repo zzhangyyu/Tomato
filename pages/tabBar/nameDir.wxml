@@ -2,7 +2,8 @@
   <view class='search'>
     <view class="search_arr">
       <icon class="search-icon" size='20' type='search'></icon>
-      <input placeholder="请输入关键字" value="{{searchValue}}" bindinput='searchValueInput'/>
+      <input placeholder="请输入关键字" value="{{searchValue}}" bindinput='searchValueInput' bindconfirm="search"/>
+      <icon wx:if="{{clearIconShow}}" type="clear" size="15" bindtap='clear'/>
     </view>
     <view class='search-text' bindtap="search">搜索</view>
   </view>
@@ -35,7 +36,7 @@
   </view>
 
   <view class="nav" bindtouchmove="touchmove" bindtouchcancel="touchcancel" bindtouchend="touchend">
-    <view class="letter" bindtap="tabLetter" data-index="{{item}}" wx:for="{{letters}}">
+    <view class="letter" bindtap="tabLetter" data-index="{{item}}" wx:for="{{letters}}" wx:key="123">
       <text class="letter-text {{selected == item ? 'letter-actived' : ''}}">{{item}}</text>
     </view>
   </view>
