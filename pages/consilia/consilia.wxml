@@ -43,15 +43,19 @@
     </view>
     <view class="consilia-hd">
       <view class="consilia-const">剂量</view>
-      <view class="consilia-var">{{consilia.prescriptionCount}}剂/{{consilia.prescriptionDuration}}</view>
+      <view class="consilia-var">{{consilia.prescriptionDuration}}</view>
     </view>
     <view wx:if="{{consilia.prescriptionMethod !=null && consilia.prescriptionMethod !=''}}" class="consilia-hd">
       <view class="consilia-const">煎服方法</view>
       <view class="consilia-var">{{consilia.prescriptionMethod}}</view>
     </view>
-    <view wx:if="{{consilia.analysis !=null && consilia.analysis !=''}}" class="consilia-hd">
+    <view wx:if="{{consilia.advice !=null && consilia.advice !=''}}" class="consilia-hd">
+      <view class="consilia-const">医嘱</view>
+      <view class="consilia-var">{{consilia.advice}}</view>
+    </view>
+    <view wx:if="{{consilia.zhaoSirSay !=null && consilia.zhaoSirSay !=''}}" class="consilia-hd">
       <view class="consilia-const">师曰</view>
-      <view class="consilia-var">{{consilia.analysis}}</view>
+      <view class="consilia-var">{{consilia.zhaoSirSay}}</view>
     </view>
 
   </view>
