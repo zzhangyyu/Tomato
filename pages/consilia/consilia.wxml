@@ -11,20 +11,19 @@
   <view class="index-bd">
     <view class="consilia-basic-info">
       <view class="consilia-basic-info-item">
-        <view class="consilia-basic-info-var">{{consilia.name}}</view>
-        <view class="consilia-basic-info-var">{{consilia.sex}}</view>
-        <view class="consilia-basic-info-var">{{consilia.age}}</view>
+        <view wx:if="{{consilia.name !=null && consilia.name !=''}}" class="consilia-basic-info-var">{{consilia.name}}</view>
+        <view wx:if="{{consilia.sex !=null && consilia.sex !=''}}" class="consilia-basic-info-var">{{consilia.sex}}</view>
+        <view wx:if="{{consilia.age !=null && consilia.age !=''}}" class="consilia-basic-info-var">{{consilia.age}}</view>
       </view>
       <view class="consilia-basic-info-item">
-        <view class="consilia-basic-info-var">{{consilia.birthday}}</view>
-        <view class="consilia-basic-info-var">{{consilia.zodiac}}</view>
+        <view wx:if="{{consilia.birthday !=null && consilia.birthday !=''}}" class="consilia-basic-info-var">{{consilia.birthday}}</view>
+        <view wx:if="{{consilia.zodiac !=null && consilia.zodiac !=''}}" class="consilia-basic-info-var">{{consilia.zodiac}}</view>
       </view>
     </view>
     <view wx:if="{{consilia.addCondition !=null && consilia.addCondition !=''}}" class="consilia-hd">
       <view class="consilia-const">病情描述</view>
       <view class="consilia-var">{{consilia.addCondition}}</view>
     </view>
-
     <view wx:if="{{consilia.pulse !=null && consilia.pulse !=''}}" class="consilia-hd">
       <view class="consilia-const">脉</view>
       <view class="consilia-var">{{consilia.pulse}}</view>
@@ -41,7 +40,7 @@
       <view class="consilia-const">药</view>
       <view class="consilia-var">{{consilia.prescriptionDetail}}</view>
     </view>
-    <view class="consilia-hd">
+    <view wx:if="{{consilia.prescriptionDuration !=null && consilia.prescriptionDuration !=''}}" class="consilia-hd">
       <view class="consilia-const">剂量</view>
       <view class="consilia-var">{{consilia.prescriptionDuration}}</view>
     </view>

@@ -35,6 +35,9 @@ App({
   },
   globalData: {
     userInfo: null,
-    recordPerPage:'10'
+    recordPerPage:'10',
+    os:'WeiXin',
+    phone:'15311496135',
+    version:'V1.0'
   }
 })

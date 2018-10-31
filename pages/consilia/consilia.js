@@ -10,12 +10,15 @@ Page({
       "content": {
         "patientConditionId": patientConditionId
       },
-      "os": "WeiXin",
-      "phone": "15311496135",
-      "version": "V1.0"
+      "os": getApp().globalData.os,
+      "phone": getApp().globalData.phone,
+      "version": getApp().globalData.version
     };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDetail", req, "正在加载...", that.onGetConsiliaDetailSuccess, that.onGetConsiliaDetailFail);
   },
+  /**
+   * 获取数据成功事件
+   */
   onGetConsiliaDetailSuccess: function(data, requestCode) {
     var that = this;
     that.setData({
@@ -25,6 +28,9 @@ Page({
       consilia: data.content
     });
   },
+  /**
+   * 获取数据失败事件
+   */
   onGetConsiliaDetailFail: function(data, requestCode) {
     var that = this;
   }

@@ -9,7 +9,6 @@ Page({
     var that = this;
     var queryStartDate = "";
     var queryEndDate = "";
-    var recordPerPage = "3";
     var reqJson = {
       "content": {
         "pageIdx": "1",
@@ -17,12 +16,15 @@ Page({
         "queryStartDate": queryStartDate,
         "queryEndDate": queryEndDate
       },
-      "os": "WeiXin",
-      "phone": "15311496135",
-      "version": "V1.0"
+      "os": getApp().globalData.os,
+      "phone": getApp().globalData.phone,
+      "version": getApp().globalData.version
     };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
   },
+  /**
+   * 下拉刷新
+   */
   onPullDownRefresh: function(option) {
     console.log("下拉刷新了");
     wx.showLoading({
@@ -38,12 +40,15 @@ Page({
         "queryStartDate": queryStartDate,
         "queryEndDate": queryEndDate
       },
-      "os": "Android",
-      "phone": "15311496135",
-      "version": "V1.0"
+      "os": getApp().globalData.os,
+      "phone": getApp().globalData.phone,
+      "version": getApp().globalData.version
     };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
   },
+  /**
+   * 上拉加载
+   */
   onReachBottom: function() {
     var that = this;
     console.log("上拉加载了");
@@ -56,7 +61,6 @@ Page({
     var curPageIdx = that.data.pageIdx;
     var queryStartDate = "";
     var queryEndDate = "";
-    var recordPerPage = "3";
     var reqJson = {
       "content": {
         "pageIdx": curPageIdx + 1,
@@ -64,9 +68,9 @@ Page({
         "queryStartDate": queryStartDate,
         "queryEndDate": queryEndDate
       },
-      "os": "Android",
-      "phone": "15311496135",
-      "version": "V1.0"
+      "os": getApp().globalData.os,
+      "phone": getApp().globalData.phone,
+      "version": getApp().globalData.version
     };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onLoadMoreConsiliaDateDirSuccess, that.onLoadMoreConsiliaDateDirFail);
     wx.stopPullDownRefresh();
@@ -77,7 +81,6 @@ Page({
     var that = this;
     var queryStartDate = e.detail.value;
     var queryEndDate = e.detail.value;
-    var recordPerPage = "3";
     var reqJson = {
       "content": {
         "pageIdx": "1",
@@ -85,25 +88,36 @@ Page({
         "queryStartDate": queryStartDate,
         "queryEndDate": queryEndDate
       },
-      "os": "Android",
-      "phone": "15311496135",
-      "version": "V1.0"
+      "os": getApp().globalData.os,
+      "phone": getApp().globalData.phone,
+      "version": getApp().globalData.version
     };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
   },
+  /**
+   * 获取数据成功事件
+   */
   onGetConsiliaDateDirSuccess: function(data, requestCode) {
     var that = this;
+    var internetData = data.content;
     that.setData({
-      pageIdx: 1
+      pageIdx: 1,
+      isLastPage: false,
+      patientdateList: internetData
     });
-    that.setData({
-      isLastPage: false
-    });
-    that.setData({
-      patientdateList: data.content
-    });
+    if (internetData == null || internetData.length == 0) {
+      wx.showToast({
+        title: '没查到内容，换个日期吧~',
+        icon: 'none',
+        duration: 2000,
+        mask: true
+      })
+    };
     wx.stopPullDownRefresh();
   },
+  /**
+   * 获取数据失败事件
+   */
   onGetConsiliaDateDirFail: function(data, requestCode) {
     var that = this;
     that.setData({
@@ -111,6 +125,9 @@ Page({
     });
     wx.stopPullDownRefresh();
   },
+  /**
+   * 上拉加载成功事件
+   */
   onLoadMoreConsiliaDateDirSuccess: function(data, requestCode) {
     var that = this;
     that.setData({
@@ -131,6 +148,9 @@ Page({
     });
 
   },
+  /**
+   * 上拉加载失败事件
+   */
   onLoadMoreConsiliaDateDirFail: function(data, requestCode) {
     var that = this;
     that.setData({

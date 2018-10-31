@@ -15,7 +15,7 @@
   },
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "#41b3f9",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
@@ -30,12 +30,6 @@
         "iconPath": "image/icon_tab_name_dir.png",
         "selectedIconPath": "image/icon_tab_name_dir_HL.png",
         "text": "按病人"
-      },
-      {
-        "pagePath": "pages/tabBar/mine",
-        "iconPath": "image/icon_medicine.png",
-        "selectedIconPath": "image/icon_medicine_HL.png",
-        "text": "我的"
       }
     ]
   }

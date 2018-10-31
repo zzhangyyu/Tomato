@@ -13,13 +13,16 @@ Page({
         "pageIdx": "1",
         "recordPerPage": getApp().globalData.recordPerPage
       },
-      "os": "WeiXin",
-      "phone": "15311496135",
-      "version": "V1.0"
+      "os": getApp().globalData.os,
+      "phone": getApp().globalData.phone,
+      "version": getApp().globalData.version
     };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
 
   },
+  /**
+   * 下拉刷新
+   */
   onPullDownRefresh: function() {
     console.log("下拉刷新了");
     var that = this;
@@ -28,37 +31,63 @@ Page({
         "pageIdx": "1",
         "recordPerPage": getApp().globalData.recordPerPage
       },
-      "os": "Android",
-      "phone": "15311496135",
-      "version": "V1.0"
+      "os": getApp().globalData.os,
+      "phone": getApp().globalData.phone,
+      "version": getApp().globalData.version
     };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
   },
+  /**
+   * 上拉加载
+   */
   onReachBottom: function() {
+    var that = this;
     console.log("上拉加载了");
+    if (that.data.isLastPage) {
+      return;
+    };
+    wx.showLoading({
+      title: '玩命加载中',
+    });
+    var curPageIdx = that.data.pageIdx;
+    var queryStartDate = "";
+    var queryEndDate = "";
+    var reqJson = {
+      "content": {
+        "pageIdx": curPageIdx + 1,
+        "recordPerPage": getApp().globalData.recordPerPage
+      },
+      "os": getApp().globalData.os,
+      "phone": getApp().globalData.phone,
+      "version": getApp().globalData.version
+    };
+    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onLoadMoreConsiliaNameDirSuccess, that.onLoadMoreConsiliaNameDirFail);
+    wx.stopPullDownRefresh();
   },
+  /**
+   * 获取数据成功事件
+   */
   onGetConsiliaNameDirSuccess: function(data, requestCode) {
     var that = this;
     var internetData = data.content;
     if (internetData == null || internetData.length == 0) {
       wx.showToast({
-        title: '无数据',
+        title: '没查到内容，换个名字吧~',
         icon: 'none',
-        duration: 1000,
+        duration: 2000,
         mask: true
       })
     }
     that.setData({
-      pageIdx: 1
-    });
-    that.setData({
-      isLastPage: false
-    });
-    that.setData({
+      pageIdx: 1,
+      isLastPage: false,
       patientNameList: internetData
     });
     wx.stopPullDownRefresh();
   },
+  /**
+   * 获取数据失败事件
+   */
   onGetConsiliaNameDirFail: function(data, requestCode) {
     var that = this;
     that.setData({
@@ -66,6 +95,9 @@ Page({
     });
     wx.stopPullDownRefresh();
   },
+  /**
+   * 上拉加载成功事件
+   */
   onLoadMoreConsiliaNameDirSuccess: function(data, requestCode) {
     var that = this;
     that.setData({
@@ -85,12 +117,18 @@ Page({
       patientNameList: curPatientNameList
     });
   },
+  /**
+   * 上拉加载失败事件
+   */
   onLoadMoreConsiliaNameDirFail: function(data, requestCode) {
     var that = this;
     that.setData({
       patientNameList: data.content
     });
   },
+  /**
+   * 搜索框点击事件
+   */
   search: function(e) {
     var that = this;
     var patientNameLike = that.data.searchValue;
@@ -100,12 +138,15 @@ Page({
         "pageIdx": "1",
         "recordPerPage": getApp().globalData.recordPerPage
       },
-      "os": "Android",
-      "phone": "15311496135",
-      "version": "V1.0"
+      "os": getApp().globalData.os,
+      "phone": getApp().globalData.phone,
+      "version": getApp().globalData.version
     };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
   },
+  /**
+   * 搜索框文字变化监听事件
+   */
   searchValueInput: function(e) {
     var that = this;
     var value = e.detail.value;
@@ -116,24 +157,16 @@ Page({
       that.setData({
         clearIconShow: false
       });
-      var patientNameLike = that.data.searchValue;
-      var reqJson = {
-        "content": {
-          "patientNameLike": patientNameLike,
-          "pageIdx": "1",
-          "recordPerPage": getApp().globalData.recordPerPage
-        },
-        "os": "Android",
-        "phone": "15311496135",
-        "version": "V1.0"
-      };
-      networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
+      that.onPullDownRefresh();
     } else {
       that.setData({
         clearIconShow: true
       });
     }
   },
+  /**
+   * 搜索框清除按钮点击事件
+   */
   clear: function(e) {
     this.setData({
       clearIconShow: false,
