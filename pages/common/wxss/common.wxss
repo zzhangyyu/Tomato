@@ -81,3 +81,9 @@
   justify-content: center;
 }
 
+.divider-line{
+  margin: 5rpx 20rpx 0rpx 5rpx;
+  height:1rpx;
+  border:none;
+  border-top:2rpx dashed #b3b3b3;
+}

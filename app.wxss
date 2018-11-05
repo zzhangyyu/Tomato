@@ -2,5 +2,5 @@
 page {
   background-color:#f4f4f4;
   height: 100%;
-  font-size: 32rpx;
+  font-size: 38rpx;
 }

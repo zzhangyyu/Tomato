@@ -8,12 +8,12 @@
 }
 
 .filter-image {
-  width: 35rpx;
-  height: 35rpx;
+  width: 40rpx;
+  height: 40rpx;
   margin: 0 10rpx 0 0;
 }
 
 .filter-text {
   color: #888888;
-  font-size: 35rpx;
+  font-size: 38rpx;
 }

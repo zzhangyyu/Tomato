@@ -36,6 +36,7 @@ Page({
       "version": getApp().globalData.version
     };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
+    that.clear();
   },
   /**
    * 上拉加载
