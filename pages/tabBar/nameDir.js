@@ -97,6 +97,36 @@ Page({
     wx.stopPullDownRefresh();
   },
   /**
+   * 搜索成功事件
+   */
+  onSearchSuccess: function (data, requestCode) {
+    var that = this;
+    var internetData = data.content;
+    if (internetData == null || internetData.length == 0) {
+      wx.showToast({
+        title: '没查到内容，换个名字吧~',
+        icon: 'none',
+        duration: 2000,
+        mask: true
+      })
+    }
+    that.setData({
+      pageIdx: 1,
+      isLastPage: true,
+      patientNameList: internetData
+    });
+  },
+  /**
+   * 获取数据失败事件
+   */
+  onSearchFail: function (data, requestCode) {
+    var that = this;
+    that.setData({
+      patientNameList: data.content
+    });
+    wx.stopPullDownRefresh();
+  },
+  /**
    * 上拉加载成功事件
    */
   onLoadMoreConsiliaNameDirSuccess: function(data, requestCode) {
@@ -143,7 +173,7 @@ Page({
       "phone": getApp().globalData.phone,
       "version": getApp().globalData.version
     };
-    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
+    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onSearchSuccess, that.onSearchFail);
   },
   /**
    * 搜索框文字变化监听事件

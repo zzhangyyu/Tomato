@@ -13,7 +13,7 @@
       <view class="consilia-basic-info-item">
         <view wx:if="{{consilia.name !=null && consilia.name !=''}}" class="consilia-basic-info-var">{{consilia.name}}</view>
         <view wx:if="{{consilia.sex !=null && consilia.sex !=''}}" class="consilia-basic-info-var">{{consilia.sex}}</view>
-        <view wx:if="{{consilia.age !=null && consilia.age !=''}}" class="consilia-basic-info-var">{{consilia.age}}</view>
+        <view wx:if="{{consilia.age !=null && consilia.age !='' && consilia.age !='0'}}" class="consilia-basic-info-var">{{consilia.age}}岁</view>
       </view>
       <view class="consilia-basic-info-item">
         <view wx:if="{{consilia.birthday !=null && consilia.birthday !=''}}" class="consilia-basic-info-var">{{consilia.birthday}}</view>
