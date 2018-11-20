@@ -2,7 +2,7 @@
   "pages":[
     "pages/tabBar/dateDir",
     "pages/tabBar/nameDir",
-    "pages/tabBar/mine",
+    "pages/tabBar/mineDir",
     "pages/dateIntro/dateIntro",
     "pages/consilia/consilia",
     "pages/nameIntro/nameIntro"

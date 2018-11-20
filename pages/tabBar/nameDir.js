@@ -163,6 +163,10 @@ Page({
   search: function(e) {
     var that = this;
     var patientNameLike = that.data.searchValue;
+    if (patientNameLike == null || patientNameLike.trim() == '') {
+      that.clear();
+      return;
+    }
     var reqJson = {
       "content": {
         "patientNameLike": patientNameLike,

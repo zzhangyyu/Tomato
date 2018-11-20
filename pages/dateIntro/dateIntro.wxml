@@ -1,11 +1,13 @@
 <view class="index">
-  <view class="page-indicator">
-    <view class='page-indicator-item'>
-      <image class='page-indicator-image' src='../../image/icon_indicator.png'></image>
-    </view>
-    <view class='page-indicator-item'>
-      <view>就诊日期：</view>
-      <view>{{visitingDate}}</view>
+  <view class='index-hd'>
+    <view class="page-indicator">
+      <view class='page-indicator-item'>
+        <image class='page-indicator-image' src='../../image/icon_indicator.png'></image>
+      </view>
+      <view class='page-indicator-item'>
+        <view>就诊日期：</view>
+        <view>{{visitingDate}}</view>
+      </view>
     </view>
   </view>
   <view class="index-bd">
@@ -16,12 +18,12 @@
             <view class="common-list-item-left">
               <view class="common-list-text-const">{{index+1}}</view>
             </view>
-            <view>
-              <view class="common-list-item-right">
+            <view class="common-list-item-right">
+              <view class="common-list-item-right-child">
                 <view class="common-list-text-const">姓名：</view>
                 <view class="common-list-text-var">{{item.patientName}}</view>
               </view>
-              <view class="common-list-item-right">
+              <view class="common-list-item-right-child">
                 <view class="common-list-text-const">性别：</view>
                 <view class="common-list-text-var">{{item.patientSex}}</view>
               </view>

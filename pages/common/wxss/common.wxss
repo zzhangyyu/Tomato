@@ -2,48 +2,63 @@
   width: 100%;
   height: 100%;
 }
+
 .index-hd {
-  padding: 80rpx;
+  width: 100%;
   text-align: center;
+  position: fixed;
+  top: 0;
+  height: 100rpx;
+  background-color: #f4f4f4;
 }
+
 .index-bd {
-  padding: 0 30rpx 40rpx;
+  margin: 0 30rpx 0 30rpx;
+  padding: 100rpx 0;
 }
 
 .common-list-item {
   margin: 20rpx 0;
-  background-color: #FFFFFF;
+  background-color: #fff;
   border-radius: 10rpx;
   overflow: hidden;
   display: flex;
   align-items: center;
 }
 
-.common-list-item-left{
+.common-list-item-left {
   padding: 20rpx;
   width: 10%;
 }
 
-.common-list-item-left-order{
+.common-list-item-left-order {
   font-weight: bold;
 }
 
 .common-list-item-right {
+  width: 100%;
   padding: 20rpx;
   display: flex;
-  align-items: flex-start;
-  transition: opacity .3s;
+  flex-direction: column;
+}
+
+.common-list-item-right-child {
+  width: 100%;
+  padding: 20rpx;
+  display: flex;
 }
 
 .common-list-item:first-child {
   margin-top: 0;
 }
-.common-list-text-const{
+
+.common-list-text-const {
   font-weight: bold;
 }
-.common-list-text-var{
-  flex: 1;
+
+.common-list-text-var {
 }
+
 .common-list-img {
   width: 60rpx;
   height: 60rpx;
@@ -57,33 +72,33 @@
   align-items: center;
 }
 
-.page-indicator{
+.page-indicator {
   width: 100%;
-  height: 60rpx;
+  height: 80rpx;
   position: relative;
   margin: 0rpx 0rpx 15rpx 0rpx;
 }
 
 .page-indicator-image {
   width: 100%;
-  height: 60rpx;
+  height: 75rpx;
 }
 
-.page-indicator-item{
+.page-indicator-item {
   width: 100%;
   height: 50rpx;
   position: absolute;
-  left:0px;
+  left: 0px;
   right: 0px;
-  top:0px;
+  top: 0px;
   bottom: 0px;
   display: flex;
   justify-content: center;
 }
 
-.divider-line{
+.divider-line {
   margin: 5rpx 20rpx 0rpx 5rpx;
-  height:1rpx;
-  border:none;
-  border-top:2rpx dashed #b3b3b3;
+  height: 1rpx;
+  border: none;
+  border-top: 2rpx dashed #b3b3b3;
 }

@@ -92,7 +92,7 @@ Page({
       "phone": getApp().globalData.phone,
       "version": getApp().globalData.version
     };
-    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
+    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onSearchSuccess, that.onSearchFail);
   },
   /**
    * 获取数据成功事件
@@ -124,6 +124,35 @@ Page({
       patientdateList: data.content
     });
     wx.stopPullDownRefresh();
+  },
+  /**
+  * 获取数据成功事件
+  */
+  onSearchSuccess: function (data, requestCode) {
+    var that = this;
+    var internetData = data.content;
+    that.setData({
+      pageIdx: 1,
+      isLastPage: true,
+      patientdateList: internetData
+    });
+    if (internetData == null || internetData.length == 0) {
+      wx.showToast({
+        title: '没查到内容，换个日期吧~',
+        icon: 'none',
+        duration: 2000,
+        mask: true
+      })
+    };
+  },
+  /**
+   * 获取数据失败事件
+   */
+  onSearchFail: function (data, requestCode) {
+    var that = this;
+    that.setData({
+      patientdateList: data.content
+    });
   },
   /**
    * 上拉加载成功事件
