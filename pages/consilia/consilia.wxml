@@ -9,7 +9,7 @@
         <view>{{consilia.visitingDate}}</view>
       </view>
     </view>
-  </view>  
+  </view>
   <view class="index-bd">
     <view class="consilia-basic-info">
       <view class="consilia-basic-info-item">
@@ -34,9 +34,9 @@
       <view class="consilia-const">舌：</view>
       <view class="consilia-var">{{consilia.tongue}}</view>
     </view>
-    <view wx:if="{{consilia.zhaoSirSay !=null && consilia.zhaoSirSay !=''}}" class="consilia-hd">
-      <view class="consilia-const">师曰：</view>
-      <view class="consilia-var">{{consilia.zhaoSirSay}}</view>
+    <view wx:if="{{consilia.analysis !=null && consilia.analysis !=''}}" class="consilia-hd">
+      <view class="consilia-const">按语：</view>
+      <view class="consilia-var">{{consilia.analysis}}</view>
     </view>
     <view wx:if="{{consilia.prescriptionName !=null && consilia.prescriptionName !=''}}" class="consilia-hd">
       <view class="consilia-const">方：</view>
@@ -57,6 +57,10 @@
     <view wx:if="{{consilia.advice !=null && consilia.advice !=''}}" class="consilia-hd">
       <view class="consilia-const">医嘱：</view>
       <view class="consilia-var">{{consilia.advice}}</view>
+    </view>
+    <view wx:if="{{consilia.zhaoSirSay !=null && consilia.zhaoSirSay !=''}}" class="consilia-hd">
+      <view class="consilia-const">老师语录：</view>
+      <view class="consilia-var">{{consilia.zhaoSirSay}}</view>
     </view>
   </view>
 </view>
