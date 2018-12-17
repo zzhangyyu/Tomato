@@ -25,10 +25,16 @@ Page({
       hidden: false
     });
     var prescriptionDetail = data.content.prescriptionDetail;
+    var prescriptionDuration = data.content.prescriptionDuration;
+    var prescriptionMethod = data.content.prescriptionMethod;
     var prescriptionDetailArr = prescriptionDetail.split("\n");
+    var prescriptionDurationArr = prescriptionDuration.split("\n");
+    var prescriptionMethodArr = prescriptionMethod.split("\n");
     that.setData({
       consilia: data.content,
-      prescriptionDetailArr: prescriptionDetailArr
+      prescriptionDetailArr: prescriptionDetailArr,
+      prescriptionDurationArr: prescriptionDurationArr,
+      prescriptionMethodArr: prescriptionMethodArr,
     });
     console.log(data.content);
   },

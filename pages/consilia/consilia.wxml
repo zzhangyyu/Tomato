@@ -50,11 +50,15 @@
     </view>
     <view wx:if="{{consilia.prescriptionDuration !=null && consilia.prescriptionDuration !=''}}" class="consilia-hd">
       <view class="consilia-const">剂量：</view>
-      <view class="consilia-var">{{consilia.prescriptionDuration}}</view>
+      <block wx:for-items="{{prescriptionDurationArr}}" wx:key="{{item}}">
+        <view class="consilia-var">{{item}}</view>
+      </block>
     </view>
     <view wx:if="{{consilia.prescriptionMethod !=null && consilia.prescriptionMethod !=''}}" class="consilia-hd">
       <view class="consilia-const">煎服方法：</view>
-      <view class="consilia-var">{{consilia.prescriptionMethod}}</view>
+      <block wx:for-items="{{prescriptionMethodArr}}" wx:key="{{item}}">
+        <view class="consilia-var">{{item}}</view>
+      </block>      
     </view>
     <view wx:if="{{consilia.advice !=null && consilia.advice !=''}}" class="consilia-hd">
       <view class="consilia-const">医嘱：</view>
