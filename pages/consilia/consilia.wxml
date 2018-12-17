@@ -44,7 +44,9 @@
     </view>
     <view wx:if="{{consilia.prescriptionDetail !=null && consilia.prescriptionDetail !=''}}" class="consilia-hd">
       <view class="consilia-const">药：</view>
-      <view class="consilia-var">{{consilia.prescriptionDetail}}</view>
+      <block wx:for-items="{{prescriptionDetailArr}}" wx:key="{{item}}">
+        <view class="consilia-var">{{item}}</view>
+      </block>
     </view>
     <view wx:if="{{consilia.prescriptionDuration !=null && consilia.prescriptionDuration !=''}}" class="consilia-hd">
       <view class="consilia-const">剂量：</view>

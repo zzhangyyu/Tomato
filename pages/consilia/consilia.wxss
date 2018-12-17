@@ -37,4 +37,5 @@
   margin-top: 10rpx;
   flex: 1;
   flex-wrap: wrap;
+  white-space: pre-line;
 }

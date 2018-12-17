@@ -24,9 +24,13 @@ Page({
     that.setData({
       hidden: false
     });
+    var prescriptionDetail = data.content.prescriptionDetail;
+    var prescriptionDetailArr = prescriptionDetail.split("\n");
     that.setData({
-      consilia: data.content
+      consilia: data.content,
+      prescriptionDetailArr: prescriptionDetailArr
     });
+    console.log(data.content);
   },
   /**
    * 获取数据失败事件
