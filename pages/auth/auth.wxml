@@ -1,0 +1,8 @@
+<view class='UCenter-bg'>
+  <!-- <image src='/image/ic_user_note.png' class='png' mode='widthFix'></image> -->
+  <view class='text-xl'>中一学堂
+  </view>
+</view>
+<view class='padding-xl'>
+  <button class='cu-btn  bg-green shadow lg block' open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">微信登录</button>
+</view>

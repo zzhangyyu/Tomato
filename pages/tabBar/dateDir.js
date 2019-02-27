@@ -5,6 +5,7 @@ Page({
     patientdateList: [],
     isLastPage: false,
   },
+  
   onLoad: function(option) {
     var that = this;
     var queryStartDate = "";
@@ -30,6 +31,7 @@ Page({
     wx.showLoading({
       title: '玩命加载中',
     })
+
     var that = this;
     var queryStartDate = "";
     var queryEndDate = "";

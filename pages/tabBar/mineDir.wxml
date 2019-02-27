@@ -4,7 +4,4 @@
   <view class='mine-bg'>2、好的文章、网页</view>
   <view class='mine-bg'>3、收藏的病人</view>
   <view class='mine-bg'>4、收藏的病历</view>
-  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
-  <button open-type="openSetting">打开授权设置页</button>
-  <button open-type="contact">进入客服会话</button>
 </view>
