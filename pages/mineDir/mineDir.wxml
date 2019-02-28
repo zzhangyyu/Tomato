@@ -1,0 +1,43 @@
+<view class='UCenter-bg'>
+  <view wx:if="{{avatarUrl}}" class="cu-avatar xl round" style="background-image:url({{avatarUrl}});"></view>
+  <view class='margin-top-sm text-xl'>{{nickName}}</view>
+</view>
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+  <view class="cu-item arrow">
+    <view class='content' bindtap="showQrcode">
+      <text class='icon-appreciatefill text-red'></text>
+      <text class='text-grey'>赵老师说的话</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class='content' bindtap="showQrcode">
+      <text class='icon-appreciatefill text-red'></text>
+      <text class='text-grey'>好的文章、网页</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class='content' bindtap="showQrcode">
+      <text class='icon-appreciatefill text-red'></text>
+      <text class='text-grey'>收藏的病人</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class='content' bindtap="showQrcode">
+      <text class='icon-appreciatefill text-red'></text>
+      <text class='text-grey'>收藏的病历</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class='content' bindtap="showQrcode">
+      <text class='icon-appreciatefill text-red'></text>
+      <text class='text-grey'>师兄分享</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <view class='content' bindtap="showQrcode">
+      <text class='icon-appreciatefill text-red'></text>
+      <text class='text-grey'>关于</text>
+    </view>
+  </view>
+
+</view>

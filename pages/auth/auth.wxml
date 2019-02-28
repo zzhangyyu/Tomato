@@ -1,5 +1,4 @@
 <view class='UCenter-bg'>
-  <!-- <image src='/image/ic_user_note.png' class='png' mode='widthFix'></image> -->
   <view class='text-xl'>中一学堂
   </view>
 </view>
