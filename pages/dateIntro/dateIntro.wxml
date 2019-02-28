@@ -19,11 +19,11 @@
               <view class="common-list-text-const">{{index+1}}</view>
             </view>
             <view class="common-list-item-right">
-              <view class="common-list-item-right-child">
+              <view class="common-list-item-right-child1">
                 <view class="common-list-text-const">姓名：</view>
                 <view class="common-list-text-var">{{item.patientName}}</view>
               </view>
-              <view class="common-list-item-right-child">
+              <view class="common-list-item-right-child1">
                 <view class="common-list-text-const">性别：</view>
                 <view class="common-list-text-var">{{item.patientSex}}</view>
               </view>

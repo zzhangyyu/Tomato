@@ -1,8 +1,9 @@
 {
   "pages":[
-    "pages/dateDir/dateDir",
-    "pages/nameDir/nameDir",
-    "pages/mineDir/mineDir",
+    "pages/byDateTab/byDate",
+    "pages/byNameTab/byName",
+    "pages/mineTab/mine",
+    "pages/zhaoSirTab/zhaoSir",
     "pages/dateIntro/dateIntro",
     "pages/consilia/consilia",
     "pages/nameIntro/nameIntro",
@@ -21,19 +22,25 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/dateDir/dateDir",
+        "pagePath": "pages/byDateTab/byDate",
         "iconPath": "image/icon_tab_date_dir.png",
         "selectedIconPath": "image/icon_tab_date_dir_HL.png",
         "text": "按日期"
       },
       {
-        "pagePath": "pages/nameDir/nameDir",
+        "pagePath": "pages/byNameTab/byName",
         "iconPath": "image/icon_tab_name_dir.png",
         "selectedIconPath": "image/icon_tab_name_dir_HL.png",
         "text": "按病人"
       },
       {
-        "pagePath": "pages/mineDir/mineDir",
+        "pagePath": "pages/zhaoSirTab/zhaoSir",
+        "iconPath": "image/icon_tab_zhao_sir_say.png",
+        "selectedIconPath": "image/icon_tab_zhao_sir_say_HL.png",
+        "text": "传道授业"
+      },
+      {
+        "pagePath": "pages/mineTab/mine",
         "iconPath": "image/icon_medicine.png",
         "selectedIconPath": "image/icon_medicine_HL.png",
         "text": "我的"

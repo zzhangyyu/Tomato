@@ -1,0 +1,35 @@
+<view class="index">
+  <view class='index-hd'>
+    <view class="cu-bar bg-white search fixed">
+      <view class='search-form round'>
+        <text class="icon-search"></text>
+        <input placeholder="请输入关键字" value="{{searchValue}}" bindinput='searchValueInput' bindconfirm="search" />
+        <text wx:if="{{clearIconShow}}" class="icon-roundclosefill lg text-gray"bindtap='clear' />
+      </view>
+      <view class='action'>
+        <button class='cu-btn bg-blue.light shadow-blur round' bindtap="search">搜索</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="index-bd">
+    <block wx:for-items="{{patientNameList}}" wx:key="{{item.visitingDate}}">
+      <navigator url="/pages/nameIntro/nameIntro?patientInfoId={{item.patientInfoId}}&patientName={{item.patientName}}">
+        <view class="common-list-item">
+          <view class="common-list-item-right">
+            <view class="common-list-item-right-child2">
+              <view>
+                <text space="emsp">{{item.patientName}} {{item.patientSex}}</text>
+              </view>
+            </view>
+            <view class="common-list-item-right-child2">
+              <view>
+                <text space="ensp">就诊次数：{{item.consiliaCnt}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>

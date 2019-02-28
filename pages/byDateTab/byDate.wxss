@@ -4,16 +4,16 @@
   display: flex;    
   justify-content: flex-end;
   align-items: center;
-  margin: 25rpx 50rpx 0;
+  padding: 25rpx 50rpx 0 0;
 }
 
 .filter-image {
-  width: 45rpx;
-  height: 45rpx;
-  margin: 0 15rpx 0 0;
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0 18rpx 0 0;
 }
 
 .filter-text {
   color: #707070;
-  font-size: 38rpx;
+  font-size: 44rpx;
 }

@@ -5,37 +5,31 @@
 <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
   <view class="cu-item arrow">
     <view class='content' bindtap="showQrcode">
-      <text class='icon-appreciatefill text-red'></text>
-      <text class='text-grey'>赵老师说的话</text>
+      <text class='icon-link text-red'></text>
+      <text class='text-grey'>好文阅读</text>
     </view>
   </view>
   <view class="cu-item arrow">
     <view class='content' bindtap="showQrcode">
-      <text class='icon-appreciatefill text-red'></text>
-      <text class='text-grey'>好的文章、网页</text>
+      <text class='icon-friendfavor text-red'></text>
+      <text class='text-grey'>我关心的病人</text>
     </view>
   </view>
   <view class="cu-item arrow">
     <view class='content' bindtap="showQrcode">
-      <text class='icon-appreciatefill text-red'></text>
-      <text class='text-grey'>收藏的病人</text>
+      <text class='icon-favor text-red'></text>
+      <text class='text-grey'>特别关注的病历</text>
     </view>
   </view>
   <view class="cu-item arrow">
     <view class='content' bindtap="showQrcode">
-      <text class='icon-appreciatefill text-red'></text>
-      <text class='text-grey'>收藏的病历</text>
+      <text class='icon-appreciate text-red'></text>
+      <text class='text-grey'>众师兄分享</text>
     </view>
   </view>
   <view class="cu-item arrow">
     <view class='content' bindtap="showQrcode">
-      <text class='icon-appreciatefill text-red'></text>
-      <text class='text-grey'>师兄分享</text>
-    </view>
-  </view>
-  <view class="cu-item arrow">
-    <view class='content' bindtap="showQrcode">
-      <text class='icon-appreciatefill text-red'></text>
+      <text class='icon-info text-red'></text>
       <text class='text-grey'>关于</text>
     </view>
   </view>

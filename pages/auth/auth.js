@@ -22,7 +22,7 @@ Page({
   //注册成功事件
   onSignUpSuccess: function (data, requestCode) {
     wx.switchTab({
-      url: '/pages/mineDir/mineDir',
+      url: '/pages/mineTab/mine',
     })
   },
   //注册失败事件

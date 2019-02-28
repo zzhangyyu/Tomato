@@ -18,7 +18,7 @@
               <view class="common-list-text-const">{{index+1}}</view>
             </view>
             <view class="common-list-item-right">
-              <view class="common-list-item-right-child">
+              <view class="common-list-item-right-child1">
                 <view class="common-list-text-const">就诊日期：</view>
                 <view class="common-list-text-var">{{item.visitingDate}}</view>
               </view>

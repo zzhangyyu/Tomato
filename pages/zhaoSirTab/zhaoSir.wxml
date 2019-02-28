@@ -1,0 +1,9 @@
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+  <view class="cu-item arrow">
+    <view class='content' bindtap="showQrcode">
+      <text class='icon-link text-red'></text>
+      <text class='text-grey'>师曰</text>
+    </view>
+  </view>
+
+</view>
