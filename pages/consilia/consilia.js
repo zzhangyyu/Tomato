@@ -36,12 +36,10 @@ Page({
       prescriptionDurationArr: prescriptionDurationArr,
       prescriptionMethodArr: prescriptionMethodArr,
     });
-    console.log(data.content);
   },
   /**
    * 获取数据失败事件
    */
   onGetConsiliaDetailFail: function(data, requestCode) {
-    var that = this;
   }
 })

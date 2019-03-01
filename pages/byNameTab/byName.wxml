@@ -19,12 +19,12 @@
           <view class="common-list-item-right">
             <view class="common-list-item-right-child2">
               <view>
-                <text space="emsp">{{item.patientName}} {{item.patientSex}}</text>
+                <text space="emsp" class='text-lg'>{{item.patientName}} {{item.patientSex}}</text>
               </view>
             </view>
             <view class="common-list-item-right-child2">
               <view>
-                <text space="ensp">就诊次数：{{item.consiliaCnt}}</text>
+                <text space="ensp" class='text-lg'>就诊次数：{{item.consiliaCnt}}</text>
               </view>
             </view>
           </view>

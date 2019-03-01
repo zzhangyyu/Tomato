@@ -5,68 +5,123 @@
         <image class='page-indicator-image' src='../../image/icon_indicator.png'></image>
       </view>
       <view class='page-indicator-item'>
-        <view>就诊日期：</view>
-        <view>{{consilia.visitingDate}}</view>
+        <button class='cu-btn round line-brown'>上一次</button>
+        <text class='text-lg'>{{consilia.visitingDate}}</text>
+        <button class='cu-btn round line-brown'>下一次</button>
       </view>
     </view>
   </view>
+
   <view class="index-bd">
     <view class="consilia-basic-info">
+      <!-- 姓名、性别、年龄 -->
       <view class="consilia-basic-info-item">
-        <view wx:if="{{consilia.name !=null && consilia.name !=''}}" class="consilia-basic-info-var">{{consilia.name}}</view>
-        <view wx:if="{{consilia.sex !=null && consilia.sex !=''}}" class="consilia-basic-info-var">{{consilia.sex}}</view>
-        <view wx:if="{{consilia.age !=null && consilia.age !='' && consilia.age !='0'}}" class="consilia-basic-info-var">{{consilia.age}}岁</view>
+        <view wx:if="{{consilia.name !=null && consilia.name !=''}}" class="consilia-basic-info-var">
+          <text class='text-lg'>{{consilia.name}}</text>
+        </view>
+        <view wx:if="{{consilia.sex !=null && consilia.sex !=''}}" class="consilia-basic-info-var">
+          <text class='text-lg'>{{consilia.sex}}</text>
+        </view>
+        <view wx:if="{{consilia.age !=null && consilia.age !='' && consilia.age !='0'}}" class="consilia-basic-info-var">
+          <text class='text-lg'>{{consilia.age}}岁</text>
+        </view>
       </view>
+
+      <!-- 生日、属相 -->
       <view class="consilia-basic-info-item">
-        <view wx:if="{{consilia.birthday !=null && consilia.birthday !=''}}" class="consilia-basic-info-var">{{consilia.birthday}}</view>
-        <view wx:if="{{consilia.zodiac !=null && consilia.zodiac !=''}}" class="consilia-basic-info-var">{{consilia.zodiac}}</view>
+        <view wx:if="{{consilia.birthday !=null && consilia.birthday !=''}}" class="consilia-basic-info-var">
+          <text class='text-lg'>{{consilia.birthday}}</text>
+        </view>
+        <view wx:if="{{consilia.zodiac !=null && consilia.zodiac !=''}}" class="consilia-basic-info-var">
+          <text class='text-lg'>{{consilia.zodiac}}</text>
+        </view>
       </view>
     </view>
+
+    <!-- 病情描述 -->
     <view wx:if="{{consilia.addCondition !=null && consilia.addCondition !=''}}" class="consilia-hd">
-      <view class="consilia-const">病情描述：</view>
-      <view class="consilia-var">{{consilia.addCondition}}</view>
+      <view class='text-xl'>
+        <text class='text-black text-bold'>病情描述：</text>
+      </view>
+      <view class="consilia-var text-df">{{consilia.addCondition}}</view>
     </view>
+
+    <!-- 脉 -->
     <view wx:if="{{consilia.pulse !=null && consilia.pulse !=''}}" class="consilia-hd">
-      <view class="consilia-const">脉：</view>
-      <view class="consilia-var">{{consilia.pulse}}</view>
+      <view class='text-xl'>
+        <text class='text-black text-bold'>脉：</text>
+      </view>
+      <view class="consilia-var text-df">{{consilia.pulse}}</view>
     </view>
+
+    <!-- 舌 -->
     <view wx:if="{{consilia.tongue !=null && consilia.tongue !=''}}" class="consilia-hd">
-      <view class="consilia-const">舌：</view>
-      <view class="consilia-var">{{consilia.tongue}}</view>
+      <view class='text-xl'>
+        <text class='text-black text-bold'>舌：</text>
+      </view>
+      <view class="consilia-var text-df">{{consilia.tongue}}</view>
     </view>
+
+    <!-- 按语 -->
     <view wx:if="{{consilia.analysis !=null && consilia.analysis !=''}}" class="consilia-hd">
-      <view class="consilia-const">按语：</view>
-      <view class="consilia-var">{{consilia.analysis}}</view>
+      <view class='text-xl'>
+        <text class='text-black text-bold'>按语：</text>
+      </view>
+      <view class="consilia-var text-df">{{consilia.analysis}}</view>
     </view>
+
+    <!-- 方 -->
     <view wx:if="{{consilia.prescriptionName !=null && consilia.prescriptionName !=''}}" class="consilia-hd">
-      <view class="consilia-const">方：</view>
-      <view class="consilia-var">{{consilia.prescriptionName}}</view>
+      <view class='text-xl'>
+        <text class='text-black text-bold'>方：</text>
+      </view>
+      <view class="consilia-var text-df">{{consilia.prescriptionName}}</view>
     </view>
+
+    <!-- 药 -->
     <view wx:if="{{consilia.prescriptionDetail !=null && consilia.prescriptionDetail !=''}}" class="consilia-hd">
-      <view class="consilia-const">药：</view>
+      <view class='text-xl'>
+        <text class='text-black text-bold'>药：</text>
+      </view>
       <block wx:for-items="{{prescriptionDetailArr}}" wx:key="{{item}}">
-        <view class="consilia-var">{{item}}</view>
+        <view class="consilia-var text-df">{{item}}</view>
       </block>
     </view>
+
+    <!-- 剂量 -->
     <view wx:if="{{consilia.prescriptionDuration !=null && consilia.prescriptionDuration !=''}}" class="consilia-hd">
-      <view class="consilia-const">剂量：</view>
+      <view class='text-xl'>
+        <text class='text-black text-bold'>剂量：</text>
+      </view>
       <block wx:for-items="{{prescriptionDurationArr}}" wx:key="{{item}}">
-        <view class="consilia-var">{{item}}</view>
+        <view class="consilia-var text-df">{{item}}</view>
       </block>
     </view>
+
+    <!-- 煎服方法 -->
     <view wx:if="{{consilia.prescriptionMethod !=null && consilia.prescriptionMethod !=''}}" class="consilia-hd">
-      <view class="consilia-const">煎服方法：</view>
+      <view class='text-xl'>
+        <text class='text-black text-bold'>煎服方法：</text>
+      </view>
       <block wx:for-items="{{prescriptionMethodArr}}" wx:key="{{item}}">
-        <view class="consilia-var">{{item}}</view>
-      </block>      
+        <view class="consilia-var text-df">{{item}}</view>
+      </block>
     </view>
+
+    <!-- 医嘱 -->
     <view wx:if="{{consilia.advice !=null && consilia.advice !=''}}" class="consilia-hd">
-      <view class="consilia-const">医嘱：</view>
-      <view class="consilia-var">{{consilia.advice}}</view>
+      <view class='text-xl'>
+        <text class='text-black text-bold'>医嘱：</text>
+      </view>
+      <view class="consilia-var text-df">{{consilia.advice}}</view>
     </view>
+
+    <!-- 老师语录 -->
     <view wx:if="{{consilia.zhaoSirSay !=null && consilia.zhaoSirSay !=''}}" class="consilia-hd">
-      <view class="consilia-const">老师语录：</view>
-      <view class="consilia-var">{{consilia.zhaoSirSay}}</view>
+      <view class='text-xl'>
+        <text class='text-black text-bold'>老师语录：</text>
+      </view>
+      <view class="consilia-var text-df">{{consilia.zhaoSirSay}}</view>
     </view>
   </view>
 </view>

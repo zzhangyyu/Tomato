@@ -1,6 +1,6 @@
 .UCenter-bg {
   /* background-image: url(https://image.weilanwl.com/color2.0/index.jpg); */
-  background-color:lightcoral;
+  background-color:#41b3f9;
   background-size: cover;
   height: 250rpx;
   display: flex;

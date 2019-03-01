@@ -4,12 +4,12 @@
   display: flex;    
   justify-content: flex-end;
   align-items: center;
-  padding: 25rpx 50rpx 0 0;
+  padding: 25rpx 50rpx;
 }
 
 .filter-image {
-  width: 50rpx;
-  height: 50rpx;
+  width: 35rpx;
+  height: 35rpx;
   margin: 0 18rpx 0 0;
 }
 

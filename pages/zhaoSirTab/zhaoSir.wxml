@@ -1,9 +1,16 @@
-<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
-  <view class="cu-item arrow">
-    <view class='content' bindtap="showQrcode">
-      <text class='icon-link text-red'></text>
-      <text class='text-grey'>师曰</text>
-    </view>
+<view class="index">
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+    <block wx:for-items="{{articleList}}" wx:key="{{item.id}}">
+      <navigator url="/pages/article/article?articleId={{item.articleId}}" class="cu-item">
+        <view class='content padding-tb-sm'>
+          <view>
+            <text class='icon-tagfill text-red'>{{item.title1}}</text>
+          </view>
+          <view>
+            <text class='text-gray text-sm'>{{item.title2}}</text>
+          </view>
+        </view>
+      </navigator>
+    </block>
   </view>
-
 </view>

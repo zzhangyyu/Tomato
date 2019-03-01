@@ -5,32 +5,27 @@
         <image class='page-indicator-image' src='../../image/icon_indicator.png'></image>
       </view>
       <view class='page-indicator-item'>
-        <view>就诊日期：</view>
-        <view>{{visitingDate}}</view>
+        <text class='text-lg'>{{visitingDate}}</text>
       </view>
     </view>
   </view>
   <view class="index-bd">
-    <view class="kind-list">
-      <block wx:for-items="{{patientIntroList}}" wx:key="{{item.patientInfoId}}">
-        <navigator url="/pages/consilia/consilia?patientConditionId={{item.patientConditionId}}">
-          <view class="common-list-item">
-            <view class="common-list-item-left">
-              <view class="common-list-text-const">{{index+1}}</view>
+    <block wx:for-items="{{patientIntroList}}" wx:key="{{item.patientInfoId}}">
+      <navigator url="/pages/consilia/consilia?patientConditionId={{item.patientConditionId}}">
+        <view class="common-list-item">
+          <view class="common-list-item-left">
+            <text class='text-lg'>{{index+1}}</text>
+          </view>
+          <view class="common-list-item-right">
+            <view class="common-list-item-right-child1">
+              <text class='text-lg'>姓名：{{item.patientName}}</text>
             </view>
-            <view class="common-list-item-right">
-              <view class="common-list-item-right-child1">
-                <view class="common-list-text-const">姓名：</view>
-                <view class="common-list-text-var">{{item.patientName}}</view>
-              </view>
-              <view class="common-list-item-right-child1">
-                <view class="common-list-text-const">性别：</view>
-                <view class="common-list-text-var">{{item.patientSex}}</view>
-              </view>
+            <view class="common-list-item-right-child1">
+              <text class='text-lg'>性别：{{item.patientSex}}</text>
             </view>
           </view>
-        </navigator>
-      </block>
-    </view>
+        </view>
+      </navigator>
+    </block>
   </view>
 </view>

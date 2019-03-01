@@ -1,0 +1,36 @@
+<view class="index">
+  <view class='article'>
+    <view class='article-title'>
+      <!-- 文章大标题 -->
+      <view class='padding-xs flex align-center'>
+        <view class='flex-sub text-center'>
+          <view class='text-xl padding'>
+            <text class='text-black text-bold'>{{title1}}</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 文章小标题 -->
+      <view class='flex align-center'>
+        <view class='flex-sub text-center'>
+          <view class='text-lg'>
+            <text space="emsp" class='text-gray'>{{author}} {{writingTime}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='divider-line'/>
+
+    <view class="article-content">
+      <!-- 正文 -->
+      <block wx:for-items="{{paraArr}}" wx:key="">
+        <view wx:if="{{item}}" class='padding-xs flex align-center'>
+          <view class='flex-sub text-left'>
+            <view class='text-df para-indent'>{{item}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

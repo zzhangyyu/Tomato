@@ -7,7 +7,8 @@
     "pages/dateIntro/dateIntro",
     "pages/consilia/consilia",
     "pages/nameIntro/nameIntro",
-    "pages/auth/auth"
+    "pages/auth/auth",
+    "pages/article/article"
   ],
   "window":{
     "backgroundTextStyle":"dark",
@@ -35,8 +36,8 @@
       },
       {
         "pagePath": "pages/zhaoSirTab/zhaoSir",
-        "iconPath": "image/icon_tab_zhao_sir_say.png",
-        "selectedIconPath": "image/icon_tab_zhao_sir_say_HL.png",
+        "iconPath": "image/icon_tab_zhao_sir_say2.png",
+        "selectedIconPath": "image/icon_tab_zhao_sir_say_HL2.png",
         "text": "传道授业"
       },
       {

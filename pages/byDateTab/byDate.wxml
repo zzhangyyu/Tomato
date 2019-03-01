@@ -3,7 +3,7 @@
     <picker mode="date" value="{{date}}" start="2008-01-01" end="2050-01-01" bindchange="bindDateChange">
       <view class="picker filter-hd">
         <image class="filter-image" src="/image/ic_normal_date.png"></image>
-        <view class="filter-text">筛选</view>
+        <text class='text-lg text-grey'>筛选</text>
       </view>
     </picker>
   </view>
@@ -12,14 +12,14 @@
       <navigator url="/pages/dateIntro/dateIntro?visitingDate={{item.visitingDate}}">
         <view class="common-list-item">
           <view class="common-list-item-left">
-            <view class="common-list-item-left-order">{{index+1}}</view>
+            <text class='text-lg'>{{index+1}}</text>
           </view>
           <view class="common-list-item-right">
             <view class="common-list-item-right-child1">
-              <view>就诊日期：{{item.visitingDate}}</view>
+              <text class='text-lg'>就诊日期：{{item.visitingDate}}</text>
             </view>
             <view class="common-list-item-right-child1">
-              <view>就诊人数：{{item.patientCnt}}</view>
+              <text class='text-lg'>就诊人数：{{item.patientCnt}}</text>
             </view>
           </view>
         </view>

@@ -5,27 +5,24 @@
         <image class='page-indicator-image' src='../../image/icon_indicator.png'></image>
       </view>
       <view class='page-indicator-item'>
-        <view>{{patientName}}</view>
+        <text class='text-lg'>{{patientName}}</text>
       </view>
-    </view>  
-  </view>  
+    </view>
+  </view>
   <view class="index-bd">
-    <view class="kind-list">
-      <block wx:for-items="{{nameIntroList}}" wx:key="{{item.patientInfoId}}">
-        <navigator url="/pages/consilia/consilia?patientConditionId={{item.patientConditionId}}">
-          <view class="common-list-item">
-            <view class="common-list-item-left">
-              <view class="common-list-text-const">{{index+1}}</view>
-            </view>
-            <view class="common-list-item-right">
-              <view class="common-list-item-right-child1">
-                <view class="common-list-text-const">就诊日期：</view>
-                <view class="common-list-text-var">{{item.visitingDate}}</view>
-              </view>
+    <block wx:for-items="{{nameIntroList}}" wx:key="{{item.patientInfoId}}">
+      <navigator url="/pages/consilia/consilia?patientConditionId={{item.patientConditionId}}">
+        <view class="common-list-item">
+          <view class="common-list-item-left">
+            <view class="common-list-text-const">{{index+1}}</view>
+          </view>
+          <view class="common-list-item-right">
+            <view class="common-list-item-right-child1">
+              <text class='text-lg'>就诊日期：{{item.visitingDate}}</text>
             </view>
           </view>
-          </navigator>
-      </block>
-    </view>
+        </view>
+      </navigator>
+    </block>
   </view>
 </view>
