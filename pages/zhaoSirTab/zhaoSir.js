@@ -6,7 +6,6 @@ Page({
     isLastPage: false,
   },
   onLoad: function (option) {
-
     var that = this;
     var reqJson = {
       "content": {
@@ -79,7 +78,7 @@ Page({
     });
     if (internetData == null || internetData.length == 0) {
       wx.showToast({
-        title: '没查到内容，换个日期吧~',
+        title: '还没有分享~',
         icon: 'none',
         duration: 2000,
         mask: true

@@ -555,8 +555,8 @@ checkbox.white[checked] .wx-checkbox-input, radio.white[checked] .wx-radio-input
   justify-content: center;
   box-sizing: border-box;
   padding: 0 30rpx;
-  font-size: 21rpx;
-  height: 48rpx;
+  font-size: 32rpx;
+  height: 56rpx;
   line-height: 1;
   text-align: center;
   text-decoration: none;

@@ -3,7 +3,7 @@
     <picker mode="date" value="{{date}}" start="2008-01-01" end="2050-01-01" bindchange="bindDateChange">
       <view class="picker filter-hd">
         <image class="filter-image" src="/image/ic_normal_date.png"></image>
-        <text class='text-lg text-grey'>筛选</text>
+        <text class='text-lg text-black'>筛选</text>
       </view>
     </picker>
   </view>

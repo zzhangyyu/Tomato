@@ -36,14 +36,8 @@ Page({
     var title1 = data.content.title1;
     var title2 = data.content.title2;
     var writingTime = data.content.writingTime;
-    var paraArr = new Array();
-    paraArr.push(data.content.para1);
-    paraArr.push(data.content.para2);
-    paraArr.push(data.content.para3);
-    paraArr.push(data.content.para4);
-    paraArr.push(data.content.para5);
-    paraArr.push(data.content.para6);  
-    paraArr.push(data.content.para7);
+    var para = data.content.para;
+    var paraArr = data.content.para.split("\n");
     that.setData({
       author: data.content.author,
       title1: data.content.title1,
@@ -56,6 +50,6 @@ Page({
    * 获取数据失败事件
    */
   onGetArticleFail: function (data, requestCode) {
-  }
- 
+  },
+
 })

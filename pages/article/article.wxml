@@ -10,7 +10,7 @@
         </view>
       </view>
 
-      <!-- 文章小标题 -->
+      <!-- 作者、时间 -->
       <view class='flex align-center'>
         <view class='flex-sub text-center'>
           <view class='text-lg'>
@@ -20,17 +20,18 @@
       </view>
     </view>
 
-    <view class='divider-line'/>
+    <view class='divider-line' />
 
     <view class="article-content">
       <!-- 正文 -->
       <block wx:for-items="{{paraArr}}" wx:key="">
         <view wx:if="{{item}}" class='padding-xs flex align-center'>
           <view class='flex-sub text-left'>
-            <view class='text-df para-indent'>{{item}}</view>
+            <view class='text-lg para-indent'>{{item}}</view>
           </view>
         </view>
       </block>
     </view>
+    
   </view>
 </view>

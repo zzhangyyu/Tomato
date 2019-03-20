@@ -5,9 +5,9 @@
         <image class='page-indicator-image' src='../../image/icon_indicator.png'></image>
       </view>
       <view class='page-indicator-item'>
-        <button class='cu-btn round line-brown'>上一次</button>
+        <!-- <button class='cu-btn round line-brown'>上一次</button> -->
         <text class='text-lg'>{{consilia.visitingDate}}</text>
-        <button class='cu-btn round line-brown'>下一次</button>
+        <!-- <button class='cu-btn round line-brown'>下一次</button> -->
       </view>
     </view>
   </view>
@@ -43,7 +43,7 @@
       <view class='text-xl'>
         <text class='text-black text-bold'>病情描述：</text>
       </view>
-      <view class="consilia-var text-df">{{consilia.addCondition}}</view>
+      <view class="consilia-var text-lg">{{consilia.addCondition}}</view>
     </view>
 
     <!-- 脉 -->
@@ -51,7 +51,7 @@
       <view class='text-xl'>
         <text class='text-black text-bold'>脉：</text>
       </view>
-      <view class="consilia-var text-df">{{consilia.pulse}}</view>
+      <view class="consilia-var text-lg">{{consilia.pulse}}</view>
     </view>
 
     <!-- 舌 -->
@@ -59,7 +59,7 @@
       <view class='text-xl'>
         <text class='text-black text-bold'>舌：</text>
       </view>
-      <view class="consilia-var text-df">{{consilia.tongue}}</view>
+      <view class="consilia-var text-lg">{{consilia.tongue}}</view>
     </view>
 
     <!-- 按语 -->
@@ -67,7 +67,7 @@
       <view class='text-xl'>
         <text class='text-black text-bold'>按语：</text>
       </view>
-      <view class="consilia-var text-df">{{consilia.analysis}}</view>
+      <view class="consilia-var text-lg">{{consilia.analysis}}</view>
     </view>
 
     <!-- 方 -->
@@ -75,7 +75,7 @@
       <view class='text-xl'>
         <text class='text-black text-bold'>方：</text>
       </view>
-      <view class="consilia-var text-df">{{consilia.prescriptionName}}</view>
+      <view class="consilia-var text-lg">{{consilia.prescriptionName}}</view>
     </view>
 
     <!-- 药 -->
@@ -84,7 +84,7 @@
         <text class='text-black text-bold'>药：</text>
       </view>
       <block wx:for-items="{{prescriptionDetailArr}}" wx:key="{{item}}">
-        <view class="consilia-var text-df">{{item}}</view>
+        <view class="consilia-var text-lg">{{item}}</view>
       </block>
     </view>
 
@@ -94,7 +94,7 @@
         <text class='text-black text-bold'>剂量：</text>
       </view>
       <block wx:for-items="{{prescriptionDurationArr}}" wx:key="{{item}}">
-        <view class="consilia-var text-df">{{item}}</view>
+        <view class="consilia-var text-lg">{{item}}</view>
       </block>
     </view>
 
@@ -104,7 +104,7 @@
         <text class='text-black text-bold'>煎服方法：</text>
       </view>
       <block wx:for-items="{{prescriptionMethodArr}}" wx:key="{{item}}">
-        <view class="consilia-var text-df">{{item}}</view>
+        <view class="consilia-var text-lg">{{item}}</view>
       </block>
     </view>
 
@@ -113,7 +113,7 @@
       <view class='text-xl'>
         <text class='text-black text-bold'>医嘱：</text>
       </view>
-      <view class="consilia-var text-df">{{consilia.advice}}</view>
+      <view class="consilia-var text-lg">{{consilia.advice}}</view>
     </view>
 
     <!-- 老师语录 -->
@@ -121,7 +121,7 @@
       <view class='text-xl'>
         <text class='text-black text-bold'>老师语录：</text>
       </view>
-      <view class="consilia-var text-df">{{consilia.zhaoSirSay}}</view>
+      <view class="consilia-var text-lg">{{consilia.zhaoSirSay}}</view>
     </view>
   </view>
 </view>
