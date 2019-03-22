@@ -18,7 +18,7 @@ function postJson(url, json, message, onNetworkSuccess, onNetworkFail) {
       'content-type': 'application/json;charset=utf-8'
     },
     method: 'POST',
-    success: function (res) {
+    success: function(res) {
       wx.hideLoading()
       if (res.statusCode == 200) {
         onNetworkSuccess(res.data);
@@ -26,7 +26,7 @@ function postJson(url, json, message, onNetworkSuccess, onNetworkFail) {
         onNetworkFail();
       }
     },
-    fail: function (err) {
+    fail: function(err) {
       wx.hideLoading();
     }
   })

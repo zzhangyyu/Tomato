@@ -1,7 +1,7 @@
 @import "/pages/common/wxss/common.wxss";
 
 .filter-hd {
-  display: flex;    
+  display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 25rpx 50rpx;

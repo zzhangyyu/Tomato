@@ -40,6 +40,5 @@ Page({
   /**
    * 获取数据失败事件
    */
-  onGetConsiliaDetailFail: function(data, requestCode) {
-  }
+  onGetConsiliaDetailFail: function(data, requestCode) {}
 })

@@ -11,7 +11,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (option) {
+  onLoad: function(option) {
     var that = this;
     var articleId = option.articleId;
     var req = {
@@ -27,7 +27,7 @@ Page({
   /**
    * 获取数据成功事件
    */
-  onGetArticleSuccess: function (data, requestCode) {
+  onGetArticleSuccess: function(data, requestCode) {
     var that = this;
     that.setData({
       hidden: false
@@ -49,7 +49,6 @@ Page({
   /**
    * 获取数据失败事件
    */
-  onGetArticleFail: function (data, requestCode) {
-  },
+  onGetArticleFail: function(data, requestCode) {},
 
 })

@@ -5,23 +5,42 @@ Page({
     patientdateList: [],
     isLastPage: false,
   },
-  
+
   onLoad: function(option) {
-    var that = this;
-    var queryStartDate = "";
-    var queryEndDate = "";
-    var reqJson = {
-      "content": {
-        "pageIdx": "1",
-        "recordPerPage": getApp().globalData.recordPerPage,
-        "queryStartDate": queryStartDate,
-        "queryEndDate": queryEndDate
-      },
-      "os": getApp().globalData.os,
-      "phone": getApp().globalData.phone,
-      "version": getApp().globalData.version
-    };
-    networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
+    wx.getSetting({
+      success: res => {
+        if (!res.authSetting['scope.userInfo']) {
+          wx.redirectTo({
+            url: '/pages/auth/auth'
+          })
+        } else {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              getApp().globalData.userInfo = res.userInfo
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(res)
+              }
+            }
+          })
+          var that = this;
+          var queryStartDate = "";
+          var queryEndDate = "";
+          var reqJson = {
+            "content": {
+              "pageIdx": "1",
+              "recordPerPage": getApp().globalData.recordPerPage,
+              "queryStartDate": queryStartDate,
+              "queryEndDate": queryEndDate
+            },
+            "os": getApp().globalData.os,
+            "phone": getApp().globalData.phone,
+            "version": getApp().globalData.version
+          };
+          networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaDateDir", reqJson, "正在加载...", that.onGetConsiliaDateDirSuccess, that.onGetConsiliaDateDirFail);
+        }
+      }
+    });
   },
   /**
    * 下拉刷新
@@ -104,9 +123,13 @@ Page({
     var internetData = data.content;
     that.setData({
       pageIdx: 1,
-      isLastPage: false,
       patientdateList: internetData
     });
+    if (internetData.length < getApp().globalData.recordPerPage) {
+      that.setData({
+        isLastPage: true
+      });
+    }
     if (internetData == null || internetData.length == 0) {
       wx.showToast({
         title: '没查到内容，换个日期吧~',
@@ -128,9 +151,9 @@ Page({
     wx.stopPullDownRefresh();
   },
   /**
-  * 获取数据成功事件
-  */
-  onSearchSuccess: function (data, requestCode) {
+   * 获取数据成功事件
+   */
+  onSearchSuccess: function(data, requestCode) {
     var that = this;
     var internetData = data.content;
     that.setData({
@@ -150,7 +173,7 @@ Page({
   /**
    * 获取数据失败事件
    */
-  onSearchFail: function (data, requestCode) {
+  onSearchFail: function(data, requestCode) {
     var that = this;
     that.setData({
       patientdateList: data.content

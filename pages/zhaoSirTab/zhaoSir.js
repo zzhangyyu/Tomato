@@ -5,7 +5,7 @@ Page({
     articleList: [],
     isLastPage: false,
   },
-  onLoad: function (option) {
+  onLoad: function(option) {
     var that = this;
     var reqJson = {
       "content": {
@@ -21,7 +21,7 @@ Page({
   /**
    * 下拉刷新
    */
-  onPullDownRefresh: function (option) {
+  onPullDownRefresh: function(option) {
     console.log("下拉刷新了");
     wx.showLoading({
       title: '玩命加载中',
@@ -43,7 +43,7 @@ Page({
   /**
    * 上拉加载
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
     var that = this;
     console.log("上拉加载了");
     if (that.data.isLastPage) {
@@ -68,17 +68,21 @@ Page({
   /**
    * 获取数据成功事件
    */
-  onGetArticleListSuccess: function (data, requestCode) {
+  onGetArticleListSuccess: function(data, requestCode) {
     var that = this;
     var internetData = data.content;
     that.setData({
       pageIdx: 1,
-      isLastPage: false,
       articleList: internetData
     });
+    if (internetData.length < getApp().globalData.recordPerPage) {
+      that.setData({
+        isLastPage: true
+      });
+    }
     if (internetData == null || internetData.length == 0) {
       wx.showToast({
-        title: '还没有分享~',
+        title: '还没有分享，敬请期待~',
         icon: 'none',
         duration: 2000,
         mask: true
@@ -89,13 +93,13 @@ Page({
   /**
    * 获取数据失败事件
    */
-  onGetArticleListFail: function (data, requestCode) {
-    
+  onGetArticleListFail: function(data, requestCode) {
+
   },
   /**
-  * 上拉加载成功事件
-  */
-  onLoadMoreArticleListSuccess: function (data, requestCode) {
+   * 上拉加载成功事件
+   */
+  onLoadMoreArticleListSuccess: function(data, requestCode) {
     var that = this;
     that.setData({
       pageIdx: that.data.pageIdx + 1
@@ -118,7 +122,7 @@ Page({
   /**
    * 上拉加载失败事件
    */
-  onLoadMoreArticleListFail: function (data, requestCode) {
-   
+  onLoadMoreArticleListFail: function(data, requestCode) {
+
   }
 })

@@ -1,7 +1,9 @@
 <view class='UCenter-bg'>
-  <view class='text-xl'>中一学堂
+  <image src='/image/logo.png' class='round' mode='widthFix'></image>
+  <view class='padding-sm'>
+    <text class='text-xl'>中一学堂</text>
   </view>
 </view>
 <view class='padding-xl'>
-  <button class='cu-btn  bg-green shadow lg block' open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">微信登录</button>
+  <button class='cu-btn bg-blue lg block' open-type="getUserInfo" bindgetuserinfo="onGetUserInfo">微信登录</button>
 </view>

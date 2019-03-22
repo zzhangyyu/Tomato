@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/byDateTab/byDate",
     "pages/byNameTab/byName",
     "pages/mineTab/mine",
@@ -10,11 +10,11 @@
     "pages/auth/auth",
     "pages/article/article"
   ],
-  "window":{
-    "backgroundTextStyle":"dark",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#2c2c2c",
     "navigationBarTitleText": "中一学堂",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#7A7E83",

@@ -1,14 +1,17 @@
 /* pages/article/article.wxss */
 @import "/pages/common/wxss/common.wxss";
+
 .para-indent {
   text-indent: 50rpx;
   white-space: pre-line;
 }
+
 .article {
   margin: 10rpx 30rpx;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #fff;
 }
+
 .article-title {
   padding: 10rpx 0;
 }

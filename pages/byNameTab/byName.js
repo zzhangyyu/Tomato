@@ -18,7 +18,6 @@ Page({
       "version": getApp().globalData.version
     };
     networkUtil.postJson("https://www.rzit.top/grape/patient/getConsiliaNameDir", reqJson, "正在加载...", that.onGetConsiliaNameDirSuccess, that.onGetConsiliaNameDirFail);
-
   },
   /**
    * 下拉刷新
@@ -79,9 +78,13 @@ Page({
         mask: true
       })
     }
+    if (internetData.length < getApp().globalData.recordPerPage) {
+      that.setData({
+        isLastPage: true
+      });
+    }
     that.setData({
       pageIdx: 1,
-      isLastPage: false,
       patientNameList: internetData
     });
     wx.stopPullDownRefresh();
@@ -99,7 +102,7 @@ Page({
   /**
    * 搜索成功事件
    */
-  onSearchSuccess: function (data, requestCode) {
+  onSearchSuccess: function(data, requestCode) {
     var that = this;
     var internetData = data.content;
     if (internetData == null || internetData.length == 0) {
@@ -119,7 +122,7 @@ Page({
   /**
    * 获取数据失败事件
    */
-  onSearchFail: function (data, requestCode) {
+  onSearchFail: function(data, requestCode) {
     var that = this;
     that.setData({
       patientNameList: data.content

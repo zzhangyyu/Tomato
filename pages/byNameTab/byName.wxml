@@ -4,7 +4,7 @@
       <view class='search-form round'>
         <text class="icon-search"></text>
         <input placeholder="请输入关键字" value="{{searchValue}}" bindinput='searchValueInput' bindconfirm="search" />
-        <text wx:if="{{clearIconShow}}" class="icon-roundclosefill lg text-gray"bindtap='clear' />
+        <text wx:if="{{clearIconShow}}" class="icon-roundclosefill lg text-gray" bindtap='clear' />
       </view>
       <view class='action'>
         <button class='cu-btn bg-blue.light shadow-blur round' bindtap="search">搜索</button>

@@ -7,7 +7,7 @@
           <text class='text-lg'>{{item.title1}}</text>
           <view>
             <view class='content text-gray '>
-              <text space="emsp" class='text-xs'> {{item.author}} {{item.writingTime}}</text>
+              <text space="emsp" class='text-sm'> {{item.author}} {{item.writingTime}}</text>
             </view>
           </view>
         </view>

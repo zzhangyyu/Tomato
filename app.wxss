@@ -1,8 +1,9 @@
 /* reset */
 @import "colorui.wxss";
 @import "icon.wxss";
+
 page {
-  background-color:#f4f4f4;
+  background-color: #f4f4f4;
   height: 100%;
   /* font-size: 36rpx; */
 }
